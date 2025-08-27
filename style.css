@@ -455,3 +455,23 @@ nav a:hover::after {
   color: #1d3557;
   transform: translateY(-2px);
 }
+.contact-links p {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+.contact-links a {
+  color: #e63946;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-links a i {
+  margin-right: 10px;
+}
+
+.contact-links a:hover {
+  color: #1d3557;
+  transform: translateY(-3px);
+}
