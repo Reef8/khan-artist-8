@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artwork 6 - Dreamlike Cityscape</title>
+  <title>555: Yin and Yang Variation - Sharif Khan</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,12 +17,11 @@
     </nav>
   </header>
 
-  <section class="art-detail">
-    <h2>Artwork 6: Dreamlike Cityscape</h2>
-    <img src="images/art6.jpg" alt="Artwork 6 - Dreamlike cityscape at sunset">
-    <p><strong>Medium:</strong> Oil & pastel</p>
-    <p><strong>Year:</strong> 2025</p>
-    <p><strong>Description:</strong> Placeholder description for Artwork 6. Replace this with story, technique, or inspiration.</p>
+  <section class="artwork">
+    <h2>555: Yin and Yang Variation</h2>
+    <img src="images/art6.jpg" alt="555: Yin and Yang Variation" style="width:100%; max-width:800px; margin:auto; display:block;">
+    <p>Paint covered squash balls hit onto a canvas 555 times.</p>
+    <p><a href="portfolio.html">← Back to Portfolio</a></p>
   </section>
 </body>
 </html>
