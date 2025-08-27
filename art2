@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artwork 2 - Surreal Landscape</title>
+  <title>Squash Balls Painting - Sharif Khan</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,12 +17,12 @@
     </nav>
   </header>
 
-  <section class="art-detail">
-    <h2>Artwork 2: Surreal Landscape</h2>
-    <img src="images/art2.jpg" alt="Artwork 2 - Surreal landscape with warm colors">
-    <p><strong>Medium:</strong> Oil on canvas</p>
-    <p><strong>Year:</strong> 2025</p>
-    <p><strong>Description:</strong> Placeholder description for Artwork 2. Replace with your own story, concept, or inspiration.</p>
+  <section class="artwork">
+    <h2>Squash Balls Painting</h2>
+    <img src="images/art2.jpg" alt="Squash Balls Painting" style="width:100%; max-width:800px; margin:auto; display:block;">
+    <p>Squash balls covered in colorful paint, hit against canvas.</p>
+    <p><a href="portfolio.html">← Back to Portfolio</a></p>
   </section>
 </body>
 </html>
+
