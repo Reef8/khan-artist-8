@@ -430,3 +430,28 @@ nav a:hover::after {
 .gallery .grid a:hover .caption {
   color: #000; /* Darken caption on hover */
 }
+/* Contact Page */
+.contact {
+  padding: 60px 20px;
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+.contact h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.contact a {
+  color: #e63946;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.contact a:hover {
+  color: #1d3557;
+  transform: translateY(-2px);
+}
