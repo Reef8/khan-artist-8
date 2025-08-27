@@ -116,3 +116,43 @@ nav a:hover {
   font-size: 22px;
   font-weight: 300;
 }
+/* Header / Navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin: 0;
+  color: #222;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #444;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 3px;
+}
+
+nav a:hover {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
+nav a.active {
+  border-bottom: 2px solid #000;
+  color: #000;
+}
