@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artwork 3 - Modern Portrait</title>
+  <title>555: Eye on Ball - Sharif Khan</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,12 +17,11 @@
     </nav>
   </header>
 
-  <section class="art-detail">
-    <h2>Artwork 3: Modern Portrait</h2>
-    <img src="images/art3.jpg" alt="Artwork 3 - Modern portrait in expressive brushstrokes">
-    <p><strong>Medium:</strong> Mixed media</p>
-    <p><strong>Year:</strong> 2025</p>
-    <p><strong>Description:</strong> Placeholder description for Artwork 3. Replace this with your own narrative or technique info.</p>
+  <section class="artwork">
+    <h2>555: Eye on Ball</h2>
+    <img src="images/art3.jpeg" alt="555: Eye on Ball" style="width:100%; max-width:800px; margin:auto; display:block;">
+    <p>Paint covered squash balls hit onto a canvas 555 times.</p>
+    <p><a href="portfolio.html">← Back to Portfolio</a></p>
   </section>
 </body>
 </html>
