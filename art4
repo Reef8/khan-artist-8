@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artwork 4 - Minimalist Black & White</title>
+  <title>555: Ying and Yang - Sharif Khan</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,12 +17,11 @@
     </nav>
   </header>
 
-  <section class="art-detail">
-    <h2>Artwork 4: Minimalist Black & White</h2>
-    <img src="images/art4.jpg" alt="Artwork 4 - Minimalist black and white composition">
-    <p><strong>Medium:</strong> Ink on paper</p>
-    <p><strong>Year:</strong> 2025</p>
-    <p><strong>Description:</strong> Placeholder description for Artwork 4. Add your thoughts, technique, or story here.</p>
+  <section class="artwork">
+    <h2>555: Ying and Yang</h2>
+    <img src="images/art4.jpg" alt="555: Ying and Yang" style="width:100%; max-width:800px; margin:auto; display:block;">
+    <p>Paint covered squash balls hit onto a canvas 555 times.</p>
+    <p><a href="portfolio.html">← Back to Portfolio</a></p>
   </section>
 </body>
 </html>
