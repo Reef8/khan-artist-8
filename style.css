@@ -156,3 +156,46 @@ nav a.active {
   border-bottom: 2px solid #000;
   color: #000;
 }
+/* Portfolio Gallery */
+.gallery {
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.gallery h2 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.gallery .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.gallery .grid div {
+  text-align: center;
+}
+
+.gallery img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.caption {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+  color: #444;
+}
