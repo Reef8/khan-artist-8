@@ -395,3 +395,38 @@ nav a:hover {
 nav a:hover::after {
   width: 100%;
 }
+.gallery .grid a {
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+}
+
+.gallery .grid a img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery .grid a:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.gallery .grid .caption {
+  text-align: center;
+  margin-top: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.gallery .grid a:hover .caption {
+  color: #000; /* Darken caption on hover */
+}
