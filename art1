@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artwork 1 - Abstract Blue</title>
+  <title>555: Coral - Sharif Khan</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,12 +17,11 @@
     </nav>
   </header>
 
-  <section class="art-detail">
-    <h2>Artwork 1: Abstract Blue</h2>
-    <img src="images/art1.jpg" alt="Artwork 1 - Abstract painting in blue tones">
-    <p><strong>Medium:</strong> Acrylic on canvas</p>
-    <p><strong>Year:</strong> 2025</p>
-    <p><strong>Description:</strong> Placeholder description for Artwork 1. Replace this with details about the piece, inspiration, and story.</p>
+  <section class="artwork">
+    <h2>555: Coral</h2>
+    <img src="images/art1.jpg" alt="555: Coral" style="width:100%; max-width:800px; margin:auto; display:block;">
+    <p>Paint covered squash balls hit onto a canvas 555 times.</p>
+    <p><a href="portfolio.html">← Back to Portfolio</a></p>
   </section>
 </body>
 </html>
