@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Artwork 5 - Geometric Patterns</title>
+  <title>555: Coral Variation - Sharif Khan</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,12 +17,11 @@
     </nav>
   </header>
 
-  <section class="art-detail">
-    <h2>Artwork 5: Geometric Patterns</h2>
-    <img src="images/art5.jpg" alt="Artwork 5 - Geometric patterns with bold contrast">
-    <p><strong>Medium:</strong> Acrylic & ink</p>
-    <p><strong>Year:</strong> 2025</p>
-    <p><strong>Description:</strong> Placeholder description for Artwork 5. Write your own details about the piece.</p>
+  <section class="artwork">
+    <h2>555: Coral Variation</h2>
+    <img src="images/art5.jpg" alt="555: Coral Variation" style="width:100%; max-width:800px; margin:auto; display:block;">
+    <p>Paint covered squash balls hit onto a canvas 555 times.</p>
+    <p><a href="portfolio.html">← Back to Portfolio</a></p>
   </section>
 </body>
 </html>
