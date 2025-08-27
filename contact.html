@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khan Artist - Contact</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
@@ -13,14 +17,26 @@
       <a href="index.html">Home</a>
       <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
   </header>
 
-  <section class="contact">
+  <section class="contact-section">
     <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-    <p>Instagram: <a href="https://instagram.com/" target="_blank">@yourhandle</a></p>
+    <p>If you’d like to reach out, collaborate, or purchase artwork, feel free to connect!</p>
+
+    <div class="contact-links">
+      <a href="mailto:youremail@example.com"><i class="fas fa-envelope"></i> Email Me</a>
+      <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+
+    <!-- Optional Contact Form -->
+    <form class="contact-form" action="#" method="post">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 </body>
 </html>
