@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khan Artist - Locations</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Khan Artist</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="locations.html" class="active">Locations</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="locations">
+      <h2>Where My Art Has Been Displayed</h2>
+      
+      <div class="location-grid">
+        <div class="location-card">
+          <img src="images/art1.jpg" alt="Artwork at Arlen Specter US Squash Center">
+          <h3>Arlen Specter US Squash Center</h3>
+          <p>Philadelphia, PA – 2024</p>
+        </div>
+
+        <div class="location-card">
+          <img src="images/art2.jpg" alt="Artwork at Seattle Art Walk">
+          <h3>Seattle Art Walk</h3>
+          <p>Seattle, WA – 2023</p>
+        </div>
+
+        <div class="location-card">
+          <img src="images/art3.jpg" alt="Artwork at Local Gallery">
+          <h3>Local Gallery</h3>
+          <p>Bellevue, WA – 2022</p>
+        </div>
+
+        <div class="location-card">
+          <img src="images/art4.jpg" alt="Artwork at Community Art Showcase">
+          <h3>Community Art Showcase</h3>
+          <p>Tacoma, WA – 2021</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
