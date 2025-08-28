@@ -381,4 +381,15 @@ section {
   height: 40px; /* adjust depending on your logo */
   width: auto;
 }
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+}
+
+.logo {
+  height: 40px;   /* consistent logo size */
+  width: auto;    /* keep proportions */
+  object-fit: contain; /* prevents stretching */
+}
 
