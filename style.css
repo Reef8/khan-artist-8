@@ -382,3 +382,7 @@ section {
   width: auto;
   object-fit: contain;
 }
+.hero-logo {
+  width: 120px; /* adjust size as needed */
+  margin: 15px 0;
+}
