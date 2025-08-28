@@ -371,4 +371,14 @@ section {
 .art-row img:hover {
   transform: scale(1.05);
 }
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
+}
+
+.logo {
+  height: 40px; /* adjust depending on your logo */
+  width: auto;
+}
 
