@@ -339,4 +339,36 @@ section {
   margin-top: 8px;
   color: #555;
 }
+.making-art {
+  padding: 40px;
+  text-align: center;
+  background-color: #fffafc; /* light pastel background */
+}
+
+.making-art h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #6a4c93; /* artsy purple */
+}
+
+.art-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.art-row img {
+  width: 250px;   /* all same width */
+  height: 250px;  /* force same height */
+  object-fit: cover; /* crops edges nicely */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s;
+}
+
+.art-row img:hover {
+  transform: scale(1.05);
+}
 
