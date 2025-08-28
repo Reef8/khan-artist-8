@@ -411,8 +411,13 @@ section {
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.08);
   padding: 15px;
-  max-width: 220px;
+  width: 220px;          /* fixed width */
+  height: 320px;         /* fixed height so all cards match */
   text-align: center;
+  display: flex;         /* helps center content */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   transition: transform 0.2s ease;
 }
 
@@ -428,12 +433,4 @@ section {
   margin-bottom: 12px;
 }
 
-.location-card h3 {
-  font-size: 1.1em;
-  margin: 8px 0 4px;
-}
-
-.location-card p {
-  font-size: 0.9em;
-  color: #555;
-}
+.locatio
