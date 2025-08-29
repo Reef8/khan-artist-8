@@ -454,3 +454,44 @@ section {
   text-align: center;
   margin: 0 10px 15px 10px;
 }
+/* ================================
+   Portfolio Artwork Pages
+================================= */
+
+.artwork {
+  padding: 2rem;
+  text-align: center;
+}
+
+.artwork h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  color: #222;
+}
+
+/* Each image/video block */
+.media-block {
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+/* Images & videos */
+.media-block img,
+.media-block video {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Description text */
+.media-block p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
