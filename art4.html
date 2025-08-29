@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>555: Ying and Yang - Sharif Khan</title>
+  <title>Yin and Yang</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,10 +18,90 @@
   </header>
 
   <section class="artwork">
-    <h2>555: Ying and Yang</h2>
-    <img src="images/art4.jpg" alt="555: Ying and Yang" style="width:100%; max-width:800px; margin:auto; display:block;">
-    <p>Paint covered squash balls hit onto a canvas 555 times.</p>
+    <h2>Yin and Yang</h2>
+
+    <div class="gallery-grid">
+      <div class="media-block">
+        <img src="images/yinyangupclose2.jpeg" alt="Main view">
+        <p>Inspired by Jahangir Khan (the G.O.A.T. of ssquash) and his remarkable 555 match win streak, that lasted nearly 5.5 years. This piece was created by hitting paint covered squash balls onto the canvas 555 times.A unique piece, that becomes truly mind blowing when you consider what each ball mark represents!</p>
+      </div>
+
+      <div class="media-block">
+        <video src="videos/yinyangreveal.mp4"></video>
+        <p>Revealing my work, days before auctioning it off at the 2025 Yusuf Khan Invitational squash tournament.</p>
+      </div>
+
+      <div class="media-block">
+        <img src="images/yinyangupcloseangle2.jpeg" alt="Detail view">
+        <p>An up close look at the marks the squash ball leaves after being hit against the canvas.</p>
+      </div>
+    </div>
+
     <p><a href="portfolio.html">← Back to Portfolio</a></p>
   </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <div class="lightbox-content"></div>
+    <span class="lightbox-next">&#10095;</span>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxContent = document.querySelector(".lightbox-content");
+    const closeBtn = document.querySelector(".lightbox-close");
+    const prevBtn = document.querySelector(".lightbox-prev");
+    const nextBtn = document.querySelector(".lightbox-next");
+
+    const items = Array.from(document.querySelectorAll(".media-block img, .media-block video"));
+    let currentIndex = 0;
+
+    function showLightbox(index) {
+      currentIndex = index;
+      const item = items[index];
+      if (item.tagName === "VIDEO") {
+        lightboxContent.innerHTML = `<video src="${item.src}" controls autoplay></video>`;
+      } else {
+        lightboxContent.innerHTML = `<img src="${item.src}" alt="">`;
+      }
+      lightbox.style.display = "flex";
+    }
+
+    items.forEach((item, index) => {
+      item.addEventListener("click", () => showLightbox(index));
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+      lightboxContent.innerHTML = "";
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      showLightbox(currentIndex);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      showLightbox(currentIndex);
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+        lightboxContent.innerHTML = "";
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.style.display === "flex") {
+        if (e.key === "ArrowLeft") prevBtn.click();
+        if (e.key === "ArrowRight") nextBtn.click();
+        if (e.key === "Escape") closeBtn.click();
+      }
+    });
+  </script>
 </body>
 </html>
