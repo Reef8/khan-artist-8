@@ -434,3 +434,23 @@ section {
 }
 
 .locatio
+/* Artwork Titles */
+.art-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #333; /* slightly darker, more distinct */
+  margin-top: 8px;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+/* Artwork Descriptions */
+.caption {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
+  font-weight: 300;
+  color: #666;
+  text-align: center;
+  margin: 0 10px 15px 10px;
+}
