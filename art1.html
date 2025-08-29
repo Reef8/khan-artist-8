@@ -19,11 +19,89 @@
 
   <section class="artwork">
     <h2>Melting Pot</h2>
-    <img src="images/meltingpot.jpeg" alt="555: Coral" style="width:100%; max-width:800px; margin:auto; display:block;">
-    <p>This piece was inspired by the fluidity of a squash ball as it flies around the court. It was created using joint-compound, giving it that 3 dimensional element.
-12’’ x 24’’
-</p>
+
+    <div class="gallery-grid">
+      <div class="media-block">
+        <img src="images/meltingpot.jpeg" alt="Main view">
+        <p>Main painting with textured layers.</p>
+      </div>
+
+      <div class="media-block">
+        <video src="videos/meltingpot-process.mp4"></video>
+        <p>Process video of the painting being made.</p>
+      </div>
+
+      <div class="media-block">
+        <img src="images/meltingpot-detail.jpg" alt="Detail view">
+        <p>Close-up showing texture details.</p>
+      </div>
+    </div>
+
     <p><a href="portfolio.html">← Back to Portfolio</a></p>
   </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <div class="lightbox-content"></div>
+    <span class="lightbox-next">&#10095;</span>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxContent = document.querySelector(".lightbox-content");
+    const closeBtn = document.querySelector(".lightbox-close");
+    const prevBtn = document.querySelector(".lightbox-prev");
+    const nextBtn = document.querySelector(".lightbox-next");
+
+    const items = Array.from(document.querySelectorAll(".media-block img, .media-block video"));
+    let currentIndex = 0;
+
+    function showLightbox(index) {
+      currentIndex = index;
+      const item = items[index];
+      if (item.tagName === "VIDEO") {
+        lightboxContent.innerHTML = `<video src="${item.src}" controls autoplay></video>`;
+      } else {
+        lightboxContent.innerHTML = `<img src="${item.src}" alt="">`;
+      }
+      lightbox.style.display = "flex";
+    }
+
+    items.forEach((item, index) => {
+      item.addEventListener("click", () => showLightbox(index));
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.style.display = "none";
+      lightboxContent.innerHTML = "";
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+      showLightbox(currentIndex);
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % items.length;
+      showLightbox(currentIndex);
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+        lightboxContent.innerHTML = "";
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.style.display === "flex") {
+        if (e.key === "ArrowLeft") prevBtn.click();
+        if (e.key === "ArrowRight") nextBtn.click();
+        if (e.key === "Escape") closeBtn.click();
+      }
+    });
+  </script>
 </body>
 </html>
