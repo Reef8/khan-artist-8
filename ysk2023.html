@@ -19,79 +19,35 @@
   </header>
 
   <main>
-    <!-- Art Grid Section -->
     <section class="collection">
       <h2>Yusuf Khan Invitational 2023</h2>
       <p>Seattle, WA – 2023</p>
 
-      <div class="art-grid">
-        <div class="art-item"><img src="images/ysk23-1.jpeg" alt="Artwork 1"></div>
-        <div class="art-item"><img src="images/ysk23-2.jpeg" alt="Artwork 1"></div>
-        <div class="art-item"><img src="images/ysk23-3.jpeg" alt="Artwork 1"></div>
-        <div class="art-item"><img src="images/ysk23-4.jpeg" alt="Artwork 1"></div>
-        <div class="art-item"><img src="images/ysk23-5.jpeg" alt="Artwork 1"></div>
-        <div class="art-item"><img src="images/ysk23-6.jpeg" alt="Artwork 1"></div>
-        <div class="art-item"><img src="images/ysk23-7.jpeg" alt="Artwork 1"></div>
-        <div class="art-item"><img src="images/ysk23-8.jpeg" alt="Artwork 1"></div>
-        <div class="art-item"><img src="images/ysk23-9.jpeg" alt="Artwork 1"></div>
-        <div class="art-item"><img src="images/ysk23-10.jpeg" alt="Artwork 1"></div>
-        <div class="art-item"><img src="images/ysk23-11.jpeg" alt="Artwork 1"></div>
-        <div class="art-item"><img src="images/ysk23-12.jpeg" alt="Artwork 1"></div>
-        <!-- Add more images as needed -->
-      </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="videos">
-      <h2>Behind the Scenes Videos</h2>
-      <div class="video-grid">
-        <div class="video-item">
-          <video controls autoplay muted playsinline>
-            <source src="videos/ysk2023_video1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="images/images/ysk23-1.jpeg" alt="Artwork 1 from Yusuf Khan Invitational 2023">
         </div>
-        <div class="video-item">
-          <video controls autoplay muted playsinline>
-            <source src="videos/ysk2023_video2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+        <div class="portfolio-item">
+          <img src="images/images/ysk23-2.jpeg" alt="Artwork 2 from Yusuf Khan Invitational 2023">
         </div>
-        <!-- Add more videos here -->
+       <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="images/images/ysk23-3.jpeg" alt="Artwork 1 from Yusuf Khan Invitational 2023">
+        </div>
+         <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="images/images/ysk23-4.jpeg" alt="Artwork 1 from Yusuf Khan Invitational 2023">
+        </div>
+           <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="images/images/ysk23-5.jpeg" alt="Artwork 1 from Yusuf Khan Invitational 2023">
+        </div>
+           <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="images/images/ysk23-6.jpeg" alt="Artwork 1 from Yusuf Khan Invitational 2023">
+        </div>
       </div>
     </section>
   </main>
-
-  <!-- Lightbox for Images -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <span class="prev">&#10094;</span>
-    <img class="lightbox-content" id="lightbox-img">
-    <span class="next">&#10095;</span>
-  </div>
-
-  <script>
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeBtn = document.querySelector(".close");
-    const prevBtn = document.querySelector(".prev");
-    const nextBtn = document.querySelector(".next");
-
-    const images = Array.from(document.querySelectorAll(".art-item img"));
-    let currentIndex = 0;
-
-    images.forEach((img, index) => {
-      img.addEventListener("click", () => {
-        currentIndex = index;
-        lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
-      });
-    });
-
-    closeBtn.addEventListener("click", () => lightbox.style.display = "none");
-    lightbox.addEventListener("click", (e) => { if (e.target === lightbox) lightbox.style.display = "none"; });
-    prevBtn.addEventListener("click", (e) => { e.stopPropagation(); currentIndex = (currentIndex - 1 + images.length) % images.length; lightboxImg.src = images[currentIndex].src; });
-    nextBtn.addEventListener("click", (e) => { e.stopPropagation(); currentIndex = (currentIndex + 1) % images.length; lightboxImg.src = images[currentIndex].src; });
-  </script>
 </body>
 </html>
