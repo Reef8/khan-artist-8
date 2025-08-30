@@ -679,3 +679,53 @@ section {
 .volume-btn:hover {
   background: rgba(0, 0, 0, 0.9);
 }
+/* Consistent sizing for art items */
+.art-item {
+  flex: 1 1 300px;
+  max-width: 350px;
+  text-align: center;
+}
+
+/* Common style for image/video wrapper */
+.art-item img,
+.art-item video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;   /* ensures content fills without stretching */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+/* Special fix for videos */
+.art-item video {
+  width: 100%;
+  height: 100%;
+}
+
+/* Layout for art row */
+.art-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.art-item .caption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #444;
+}
+
+/* Mobile view - stack items full width */
+@media (max-width: 768px) {
+  .art-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .art-item {
+    max-width: 100%;
+  }
+}
+
