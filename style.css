@@ -656,3 +656,26 @@ section {
     max-width: 100%;
   }
 }
+/* Video container for overlay button */
+.video-container {
+  position: relative;
+  display: inline-block;
+}
+
+.volume-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.volume-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
