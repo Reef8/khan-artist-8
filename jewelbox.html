@@ -48,33 +48,56 @@
     </section>
   </main>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img">
-  </div>
+ <!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <span class="prev">&#10094;</span>
+  <img class="lightbox-content" id="lightbox-img">
+  <span class="next">&#10095;</span>
+</div>
 
-  <script>
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const closeBtn = document.querySelector(".close");
+<script>
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".close");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
 
-    document.querySelectorAll(".art-item img").forEach(img => {
-      img.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
-      });
-    });
+const images = Array.from(document.querySelectorAll(".art-item img"));
+let currentIndex = 0;
 
-    closeBtn.addEventListener("click", () => {
-      lightbox.style.display = "none";
-    });
+// Open lightbox
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    currentIndex = index;
+    lightbox.style.display = "flex";
+    lightboxImg.src = img.src;
+  });
+});
 
-    lightbox.addEventListener("click", (e) => {
-      if (e.target !== lightboxImg) {
-        lightbox.style.display = "none";
-      }
-    });
-  </script>
-</body>
-</html>
+// Close lightbox
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+// Close if clicking outside image
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+});
+
+// Previous image
+prevBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  lightboxImg.src = images[currentIndex].src;
+});
+
+// Next image
+nextBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  currentIndex = (currentIndex + 1) % images.length;
+  lightboxImg.src = images[currentIndex].src;
+});
+</script>
