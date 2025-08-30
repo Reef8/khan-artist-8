@@ -612,3 +612,35 @@ section {
 
 .lightbox-prev { left: 20px; }
 .lightbox-next { right: 20px; }
+
+/* Behind the Scenes - Images & Videos */
+.art-item img,
+.art-item video {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: block;
+}
+
+/* Layout for art items */
+.art-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.art-item {
+  flex: 1 1 300px;
+  max-width: 350px;
+  text-align: center;
+}
+
+.art-item .caption {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  color: #444;
+}
+
