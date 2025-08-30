@@ -882,3 +882,19 @@ section {
   object-fit: contain; /* keeps whole image visible */
   border-radius: 6px;
 }
+/* Behind the Scenes section - restore spacing */
+.behind-scenes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* adds spacing between images */
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.behind-scenes img {
+  max-width: 300px; /* keeps them smaller instead of full width */
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
