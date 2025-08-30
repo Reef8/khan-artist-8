@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khan Artist - Jewel Box Cafe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Khan Artist</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="locations.html" class="active">Locations</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="collection">
+      <h2>Jewel Box Cafe</h2>
+      <p>Seattle, WA – 2023</p>
+
+      <div class="art-row">
+        <div class="art-item">
+          <img src="images/jewelbox_art1.jpeg" alt="Artwork 1 from Jewel Box Cafe">
+          <p class="caption">Piece Title 1</p>
+        </div>
+        <div class="art-item">
+          <img src="images/jewelbox_art2.jpeg" alt="Artwork 2 from Jewel Box Cafe">
+          <p class="caption">Piece Title 2</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
