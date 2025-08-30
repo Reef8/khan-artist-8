@@ -24,66 +24,26 @@
       <p>Seattle, WA – 2023</p>
 
       <div class="art-grid">
-        <div class="art-item">
-          <img src="images/jewel1.jpeg" alt="Artwork 1 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel2.jpeg" alt="Artwork 2 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel3.jpeg" alt="Artwork 3 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel4.jpeg" alt="Artwork 4 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel5.jpeg" alt="Artwork 5 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel6.jpeg" alt="Artwork 6 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel7.jpeg" alt="Artwork 7 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel8.jpeg" alt="Artwork 8 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel9.jpeg" alt="Artwork 9 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel10.jpeg" alt="Artwork 10 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel11.jpeg" alt="Artwork 11 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel12.jpeg" alt="Artwork 12 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel13.jpeg" alt="Artwork 13 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel14.jpeg" alt="Artwork 14 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel15.jpeg" alt="Artwork 15 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel16.jpeg" alt="Artwork 16 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel17.jpeg" alt="Artwork 17 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel18.jpeg" alt="Artwork 18 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel19.jpeg" alt="Artwork 19 from Jewel Box Cafe">
-        </div>
-        <div class="art-item">
-          <img src="images/jewel20.jpeg" alt="Artwork 20 from Jewel Box Cafe">
-        </div>
+        <div class="art-item"><img src="images/jewel1.jpeg" alt="Artwork 1"></div>
+        <div class="art-item"><img src="images/jewel2.jpeg" alt="Artwork 2"></div>
+        <div class="art-item"><img src="images/jewel3.jpeg" alt="Artwork 3"></div>
+        <div class="art-item"><img src="images/jewel4.jpeg" alt="Artwork 4"></div>
+        <div class="art-item"><img src="images/jewel5.jpeg" alt="Artwork 5"></div>
+        <div class="art-item"><img src="images/jewel6.jpeg" alt="Artwork 6"></div>
+        <div class="art-item"><img src="images/jewel7.jpeg" alt="Artwork 7"></div>
+        <div class="art-item"><img src="images/jewel8.jpeg" alt="Artwork 8"></div>
+        <div class="art-item"><img src="images/jewel9.jpeg" alt="Artwork 9"></div>
+        <div class="art-item"><img src="images/jewel10.jpeg" alt="Artwork 10"></div>
+        <div class="art-item"><img src="images/jewel11.jpeg" alt="Artwork 11"></div>
+        <div class="art-item"><img src="images/jewel12.jpeg" alt="Artwork 12"></div>
+        <div class="art-item"><img src="images/jewel13.jpeg" alt="Artwork 13"></div>
+        <div class="art-item"><img src="images/jewel14.jpeg" alt="Artwork 14"></div>
+        <div class="art-item"><img src="images/jewel15.jpeg" alt="Artwork 15"></div>
+        <div class="art-item"><img src="images/jewel16.jpeg" alt="Artwork 16"></div>
+        <div class="art-item"><img src="images/jewel17.jpeg" alt="Artwork 17"></div>
+        <div class="art-item"><img src="images/jewel18.jpeg" alt="Artwork 18"></div>
+        <div class="art-item"><img src="images/jewel19.jpeg" alt="Artwork 19"></div>
+        <div class="art-item"><img src="images/jewel20.jpeg" alt="Artwork 20"></div>
       </div>
     </section>
   </main>
@@ -97,7 +57,7 @@
   <script>
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
-    const close = document.querySelector(".close");
+    const closeBtn = document.querySelector(".close");
 
     document.querySelectorAll(".art-item img").forEach(img => {
       img.addEventListener("click", () => {
@@ -106,7 +66,7 @@
       });
     });
 
-    close.addEventListener("click", () => {
+    closeBtn.addEventListener("click", () => {
       lightbox.style.display = "none";
     });
 
