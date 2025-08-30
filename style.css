@@ -808,3 +808,12 @@ section {
 .art-item img:hover {
   transform: scale(1.05);
 }
+.art-item img,
+.art-item video {
+  width: 100%;
+  height: auto;        /* keeps full aspect ratio */
+  max-height: 500px;   /* smaller box size (was probably 600–700px before) */
+  object-fit: contain; /* shows entire image without cropping */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
