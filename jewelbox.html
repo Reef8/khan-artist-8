@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Khan Artist - Jewel Box Cafe</title>
+  <title>Khan Artist - Jewelbox</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,84 +20,32 @@
 
   <main>
     <section class="collection">
-      <h2>Jewel Box Cafe</h2>
+      <h2>Jewelbox</h2>
       <p>Seattle, WA – 2023</p>
 
-      <div class="art-grid">
-        <div class="art-item"><img src="images/jewel1.jpeg" alt="Artwork 1"></div>
-        <div class="art-item"><img src="images/jewel2.jpeg" alt="Artwork 2"></div>
-        <div class="art-item"><img src="images/jewel3.jpeg" alt="Artwork 3"></div>
-        <div class="art-item"><img src="images/jewel4.jpeg" alt="Artwork 4"></div>
-        <div class="art-item"><img src="images/jewel5.jpeg" alt="Artwork 5"></div>
-        <div class="art-item"><img src="images/jewel6.jpeg" alt="Artwork 6"></div>
-        <div class="art-item"><img src="images/jewel7.jpeg" alt="Artwork 7"></div>
-        <div class="art-item"><img src="images/jewel8.jpeg" alt="Artwork 8"></div>
-        <div class="art-item"><img src="images/jewel9.jpeg" alt="Artwork 9"></div>
-        <div class="art-item"><img src="images/jewel10.jpeg" alt="Artwork 10"></div>
-        <div class="art-item"><img src="images/jewel11.jpeg" alt="Artwork 11"></div>
-        <div class="art-item"><img src="images/jewel12.jpeg" alt="Artwork 12"></div>
-        <div class="art-item"><img src="images/jewel13.jpeg" alt="Artwork 13"></div>
-        <div class="art-item"><img src="images/jewel14.jpeg" alt="Artwork 14"></div>
-        <div class="art-item"><img src="images/jewel15.jpeg" alt="Artwork 15"></div>
-        <div class="art-item"><img src="images/jewel16.jpeg" alt="Artwork 16"></div>
-        <div class="art-item"><img src="images/jewel17.jpeg" alt="Artwork 17"></div>
-        <div class="art-item"><img src="images/jewel18.jpeg" alt="Artwork 18"></div>
-        <div class="art-item"><img src="images/jewel19.jpeg" alt="Artwork 19"></div>
-        <div class="art-item"><img src="images/jewel20.jpeg" alt="Artwork 20"></div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item"><img src="images/jewel1.jpeg" alt="Jewelbox artwork 1"></div>
+        <div class="portfolio-item"><img src="images/jewel2.jpeg" alt="Jewelbox artwork 2"></div>
+        <div class="portfolio-item"><img src="images/jewel3.jpeg" alt="Jewelbox artwork 3"></div>
+        <div class="portfolio-item"><img src="images/jewel4.jpeg" alt="Jewelbox artwork 4"></div>
+        <div class="portfolio-item"><img src="images/jewel5.jpeg" alt="Jewelbox artwork 5"></div>
+        <div class="portfolio-item"><img src="images/jewel6.jpeg" alt="Jewelbox artwork 6"></div>
+        <div class="portfolio-item"><img src="images/jewel7.jpeg" alt="Jewelbox artwork 7"></div>
+        <div class="portfolio-item"><img src="images/jewel8.jpeg" alt="Jewelbox artwork 8"></div>
+        <div class="portfolio-item"><img src="images/jewel9.jpeg" alt="Jewelbox artwork 9"></div>
+        <div class="portfolio-item"><img src="images/jewel10.jpeg" alt="Jewelbox artwork 10"></div>
+        <div class="portfolio-item"><img src="images/jewel11.jpeg" alt="Jewelbox artwork 11"></div>
+        <div class="portfolio-item"><img src="images/jewel12.jpeg" alt="Jewelbox artwork 12"></div>
+        <div class="portfolio-item"><img src="images/jewel13.jpeg" alt="Jewelbox artwork 13"></div>
+        <div class="portfolio-item"><img src="images/jewel14.jpeg" alt="Jewelbox artwork 14"></div>
+        <div class="portfolio-item"><img src="images/jewel15.jpeg" alt="Jewelbox artwork 15"></div>
+        <div class="portfolio-item"><img src="images/jewel16.jpeg" alt="Jewelbox artwork 16"></div>
+        <div class="portfolio-item"><img src="images/jewel17.jpeg" alt="Jewelbox artwork 17"></div>
+        <div class="portfolio-item"><img src="images/jewel18.jpeg" alt="Jewelbox artwork 18"></div>
+        <div class="portfolio-item"><img src="images/jewel19.jpeg" alt="Jewelbox artwork 19"></div>
+        <div class="portfolio-item"><img src="images/jewel20.jpeg" alt="Jewelbox artwork 20"></div>
       </div>
     </section>
   </main>
-
- <!-- Lightbox -->
-<div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <span class="prev">&#10094;</span>
-  <img class="lightbox-content" id="lightbox-img">
-  <span class="next">&#10095;</span>
-</div>
-
-<script>
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const closeBtn = document.querySelector(".close");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-
-const images = Array.from(document.querySelectorAll(".art-item img"));
-let currentIndex = 0;
-
-// Open lightbox
-images.forEach((img, index) => {
-  img.addEventListener("click", () => {
-    currentIndex = index;
-    lightbox.style.display = "flex";
-    lightboxImg.src = img.src;
-  });
-});
-
-// Close lightbox
-closeBtn.addEventListener("click", () => {
-  lightbox.style.display = "none";
-});
-
-// Close if clicking outside image
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) {
-    lightbox.style.display = "none";
-  }
-});
-
-// Previous image
-prevBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  currentIndex = (currentIndex - 1 + images.length) % images.length;
-  lightboxImg.src = images[currentIndex].src;
-});
-
-// Next image
-nextBtn.addEventListener("click", (e) => {
-  e.stopPropagation();
-  currentIndex = (currentIndex + 1) % images.length;
-  lightboxImg.src = images[currentIndex].src;
-});
-</script>
+</body>
+</html>
