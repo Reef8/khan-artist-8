@@ -21,28 +21,24 @@
     <h2>555: Eye on Ball</h2>
 
     <div class="portfolio-grid">
-      <!-- Artwork -->
       <div class="portfolio-item">
-        <img src="images/art3.jpeg" alt="555 Eye on Ball original artwork">
+        <img src="images/art3.jpeg" alt="Eye on Ball original artwork">
+        <p>
+          Inspired by Jahangir Khan (the G.O.A.T. of squash) and his remarkable 555 match win streak, that lasted nearly 5.5 years.  
+          This piece was created by hitting paint-covered squash balls onto the canvas 555 times.  
+          A unique piece, that becomes truly mind blowing when you consider what each ball mark represents!
+        </p>
       </div>
 
-      <!-- Display in home -->
       <div class="portfolio-item">
         <img src="images/eyeonballhome.jpeg" alt="Eye on Ball displayed in its new home">
+        <p>This piece displayed in its new home!</p>
       </div>
 
-      <!-- Display at YSK 2024 -->
       <div class="portfolio-item">
-        <img src="images/eyeonballysk2024.jpeg" alt="Eye on Ball displayed at the XBOX PSA World Tour Finals">
+        <img src="images/eyeonballysk2024.jpeg" alt="Eye on Ball at the Xbox PSA World Tour Finals 2024">
+        <p>Displayed at the XBOX PSA World Tour Finals last year; one of the biggest squash tournaments in the world!!!</p>
       </div>
-    </div>
-
-    <div class="artwork-description">
-      <p>
-        Inspired by Jahangir Khan (the G.O.A.T. of squash) and his remarkable 555 match win streak that lasted nearly 5.5 years. 
-        This piece was created by hitting paint-covered squash balls onto the canvas 555 times. 
-        A unique piece that becomes truly mind-blowing when you consider what each ball mark represents!
-      </p>
     </div>
 
     <p><a href="portfolio.html">← Back to Portfolio</a></p>
@@ -92,4 +88,24 @@
     });
 
     nextBtn.addEventListener("click", () => {
-      currentIndex
+      currentIndex = (currentIndex + 1) % items.length;
+      showLightbox(currentIndex);
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = "none";
+        lightboxContent.innerHTML = "";
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.style.display === "flex") {
+        if (e.key === "ArrowLeft") prevBtn.click();
+        if (e.key === "ArrowRight") nextBtn.click();
+        if (e.key === "Escape") closeBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
