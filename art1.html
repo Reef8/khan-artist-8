@@ -27,7 +27,7 @@
       </div>
 
       <div class="media-block">
-        <video src="videos/meltingpotreveal.mp4"></video>
+        <video src="videos/meltingpotreveal.mp4" autoplay muted loop playsinline></video>
         <p>Revealing my work, days before auctioning it off at the 2025 Yusuf Khan Invitational squash tournament.</p>
       </div>
 
@@ -62,7 +62,7 @@
       currentIndex = index;
       const item = items[index];
       if (item.tagName === "VIDEO") {
-        lightboxContent.innerHTML = `<video src="${item.src}" controls autoplay></video>`;
+        lightboxContent.innerHTML = `<video src="${item.src}" controls autoplay muted loop playsinline></video>`;
       } else {
         lightboxContent.innerHTML = `<img src="${item.src}" alt="">`;
       }
