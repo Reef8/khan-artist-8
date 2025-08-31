@@ -916,3 +916,73 @@ section {
   color: #333;
   line-height: 1.4;
 }
+/* --- Behind the Scenes Section --- */
+.art-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* space between images */
+  margin-top: 20px;
+}
+
+.art-item {
+  text-align: center;
+}
+
+.art-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.art-item img:hover {
+  transform: scale(1.02);
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* --- Modal (click-to-enlarge) --- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 60px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+}
+
+.modal:target {
+  display: block;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #ccc;
+}
