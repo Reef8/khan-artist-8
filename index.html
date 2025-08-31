@@ -5,96 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khan Artist - Home</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+<header>
+  <div class="logo-container">
     <h1>Khan Artist</h1>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <!-- Behind the Scenes Section -->
-  <section class="behind-scenes">
-    <h2>Behind the Scenes</h2>
-    <div class="art-row">
-      <div class="art-item">
-        <img src="images/scene1.jpeg" alt="Scene 1">
-        <div class="caption">Setting up the studio</div>
-      </div>
-      <div class="art-item">
-        <img src="images/scene2.jpeg" alt="Scene 2">
-        <div class="caption">Mixing materials</div>
-      </div>
-      <div class="art-item">
-        <img src="images/scene3.jpeg" alt="Scene 3">
-        <div class="caption">Adding texture details</div>
-      </div>
-      <!-- add more images as needed -->
-    </div>
-  </section>
-
-  <!-- Lightbox (click-to-enlarge) -->
-  <div id="lightbox" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <span class="lightbox-prev">&#10094;</span>
-    <div class="lightbox-content"></div>
-    <span class="lightbox-next">&#10095;</span>
+    <img src="images/logo.png" alt="Khan Artist Logo" class="logo">
   </div>
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <script>
-    const lightbox = document.getElementById("lightbox");
-    const lightboxContent = document.querySelector(".lightbox-content");
-    const closeBtn = document.querySelector(".lightbox-close");
-    const prevBtn = document.querySelector(".lightbox-prev");
-    const nextBtn = document.querySelector(".lightbox-next");
+<!-- Hero Section -->
+<section class="hero">
+  <div class="overlay">
+    <h2>KHAN ARTIST</h2>
+    <img src="images/logo.png" alt="Sharif Khan Logo" class="hero-logo">
+    <p>Sharif Khan: Contemporary Artist & Creative Visionary</p>
+  </div>
+</section>
 
-    const items = Array.from(document.querySelectorAll(".art-item img"));
-    let currentIndex = 0;
+<!-- Making Art Section -->
+<section class="making-art">
+  <h2>Behind the Scenes</h2>
+  <div class="art-row">
+    <div class="art-item">
+      <img src="images/artmaking1.jpeg" alt="Sharif painting a canvas">
+      <p class="caption">My art displayed at Wild Wood Market in West Seattle, WA</p>
+    </div>
+    <div class="art-item">
+      <img src="images/artmaking2.jpeg" alt="Mixing colors for artwork">
+      <p class="caption">Showing off my fancy workplace (a desk in a spare bedroom...)</p>
+    </div>
+    <div class="art-item">
+      <img src="images/artmaking3.jpeg" alt="Studio setup for painting">
+      <p class="caption">My poorly placed art at Jewel Box Cafe, Seattle, WA</p>
+    </div>
+    <div class="art-item">
+      <img src="images/artmaking4.jpeg" alt="Sharif painting a canvas">
+      <p class="caption">Getting messy with some unique splatter art!</p>
+    </div>
+    <div class="art-item">
+      <img src="images/solocups.jpeg" alt="Sharif painting a canvas">
+      <p class="caption">Prepping for some squash art!</p>
+    </div>
+  </div>
+</section>
 
-    function showLightbox(index) {
-      currentIndex = index;
-      const item = items[index];
-      lightboxContent.innerHTML = `<img src="${item.src}" alt="">`;
-      lightbox.style.display = "flex";
-    }
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <span class="lightbox-prev">&#10094;</span>
+  <div class="lightbox-content"></div>
+  <span class="lightbox-next">&#10095;</span>
+</div>
 
-    items.forEach((item, index) => {
-      item.addEventListener("click", () => showLightbox(index));
-    });
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxContent = document.querySelector(".lightbox-content");
+  const closeBtn = document.querySelector(".lightbox-close");
+  const prevBtn = document.querySelector(".lightbox-prev");
+  const nextBtn = document.querySelector(".lightbox-next");
 
-    closeBtn.addEventListener("click", () => {
+  const items = Array.from(document.querySelectorAll(".art-item img"));
+  let currentIndex = 0;
+
+  function showLightbox(index) {
+    currentIndex = index;
+    const item = items[index];
+    lightboxContent.innerHTML = `<img src="${item.src}" alt="" style="max-width:90vw; max-height:80vh; width:auto; height:auto; display:block; margin:auto; border-radius:8px;">`;
+    lightbox.style.display = "flex";
+  }
+
+  items.forEach((item, index) => {
+    item.addEventListener("click", () => showLightbox(index));
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+    lightboxContent.innerHTML = "";
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    showLightbox(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    showLightbox(currentIndex);
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
       lightbox.style.display = "none";
       lightboxContent.innerHTML = "";
-    });
+    }
+  });
 
-    prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
-      showLightbox(currentIndex);
-    });
-
-    nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % items.length;
-      showLightbox(currentIndex);
-    });
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = "none";
-        lightboxContent.innerHTML = "";
-      }
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (lightbox.style.display === "flex") {
-        if (e.key === "ArrowLeft") prevBtn.click();
-        if (e.key === "ArrowRight") nextBtn.click();
-        if (e.key === "Escape") closeBtn.click();
-      }
-    });
-  </script>
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.style.display === "flex") {
+      if (e.key === "ArrowLeft") prevBtn.click();
+      if (e.key === "ArrowRight") nextBtn.click();
+      if (e.key === "Escape") closeBtn.click();
+    }
+  });
+</script>
 </body>
 </html>
