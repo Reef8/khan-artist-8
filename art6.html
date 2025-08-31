@@ -21,22 +21,19 @@
     <h2>Inception</h2>
 
     <div class="gallery-grid">
-      <!-- Example image -->
       <div class="media-block">
-        <img src="images/inception1.jpeg" alt="[ALT TEXT]">
-        <p>The chicken and the egg</p>
+        <img src="images/inception1.jpeg" alt="Main view">
+        <p>The chicken and the egg.</p>
       </div>
 
-      <!-- Example video -->
       <div class="media-block">
-        <video src="videos/inceptionreveal.mp4"></video>
+        <video src="videos/inceptionreveal.mp4" autoplay muted loop playsinline></video>
         <p>Revealing my work, days before auctioning it off at the 2025 Yusuf Khan Invitational squash tournament.</p>
       </div>
 
-      <!-- Example second image -->
-      <div class="media-block">
-        <video src="videos/inceptionmaking.mp4"></video>
-        <p>An inside look on how this piece was created!</p>
+       <div class="media-block">
+        <video src="videos/inceptionmaking.mp4" autoplay muted loop playsinline></video>
+        <p>An inside look on how this piece was made!</p>
       </div>
     </div>
 
@@ -65,7 +62,7 @@
       currentIndex = index;
       const item = items[index];
       if (item.tagName === "VIDEO") {
-        lightboxContent.innerHTML = `<video src="${item.src}" controls autoplay></video>`;
+        lightboxContent.innerHTML = `<video src="${item.src}" controls autoplay muted loop playsinline></video>`;
       } else {
         lightboxContent.innerHTML = `<img src="${item.src}" alt="">`;
       }
