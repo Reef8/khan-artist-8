@@ -23,17 +23,17 @@
     <div class="gallery-grid">
       <div class="media-block">
         <img src="images/coral.jpeg" alt="Main view">
-        <p>Inspired by Jahangir Khan (the G.O.A.T. of ssquash) and his remarkable 555 match win streak, that lasted nearly 5.5 years. This piece was created by hitting paint covered squash balls onto the canvas 555 times.A unique piece, that becomes truly mind blowing when you consider what each ball mark represents!</p>
+        <p>Inspired by Jahangir Khan (the G.O.A.T. of squash) and his remarkable 555 match win streak, that lasted nearly 5.5 years. This piece was created by hitting paint covered squash balls onto a canvas 555 times. A unique piece, that becomes truly mind blowing when you consider what each ball mark represents!</p>
       </div>
 
       <div class="media-block">
-        <video src="videos/revealingcoral.mp4"></video>
+        <video src="videos/revealingcoral.mp4" autoplay muted loop playsinline></video>
         <p>Revealing my work, days before auctioning it off at the 2025 Yusuf Khan Invitational squash tournament.</p>
       </div>
 
       <div class="media-block">
-        <video src="videos/coralupclose.mp4"></video>
-        <p>A close-up look at the textured details.</p>
+        <img src="images/coralupclose.jpeg" alt="Detail view">
+        <p>An up close look at the marks the squash ball leaves after being hit against the canvas.</p>
       </div>
     </div>
 
@@ -62,7 +62,7 @@
       currentIndex = index;
       const item = items[index];
       if (item.tagName === "VIDEO") {
-        lightboxContent.innerHTML = `<video src="${item.src}" controls autoplay></video>`;
+        lightboxContent.innerHTML = `<video src="${item.src}" controls autoplay muted loop playsinline></video>`;
       } else {
         lightboxContent.innerHTML = `<img src="${item.src}" alt="">`;
       }
