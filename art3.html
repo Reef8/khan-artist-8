@@ -20,24 +20,29 @@
   <section class="artwork">
     <h2>555: Eye on Ball</h2>
 
-    <div class="gallery-grid">
-      <!-- Example image -->
-      <div class="media-block">
-        <img src="images/art3.jpeg" alt="[ALT TEXT]">
-        <p>Inspired by Jahangir Khan (the G.O.A.T. of ssquash) and his remarkable 555 match win streak, that lasted nearly 5.5 years. This piece was created by hitting paint covered squash balls onto the canvas 555 times.A unique piece, that becomes truly mind blowing when you consider what each ball mark represents!</p>
+    <div class="portfolio-grid">
+      <!-- Artwork -->
+      <div class="portfolio-item">
+        <img src="images/art3.jpeg" alt="555 Eye on Ball original artwork">
       </div>
 
-      <!-- Example image -->
-      <div class="media-block">
-        <img src="images/eyeonballhome.jpeg" alt="[ALT TEXT]">
-        <p>This piece displayed in its new home!</p>
+      <!-- Display in home -->
+      <div class="portfolio-item">
+        <img src="images/eyeonballhome.jpeg" alt="Eye on Ball displayed in its new home">
       </div>
 
-      <!-- Example second image -->
-      <div class="media-block">
-        <img src="images/eyeonballysk2024.jpeg" alt="[ALT TEXT]">
-        <p>Displayed at the XBOX PSA World Tour Finals last year; one of the biggest squash tournaments in the world!!!</p>
+      <!-- Display at YSK 2024 -->
+      <div class="portfolio-item">
+        <img src="images/eyeonballysk2024.jpeg" alt="Eye on Ball displayed at the XBOX PSA World Tour Finals">
       </div>
+    </div>
+
+    <div class="artwork-description">
+      <p>
+        Inspired by Jahangir Khan (the G.O.A.T. of squash) and his remarkable 555 match win streak that lasted nearly 5.5 years. 
+        This piece was created by hitting paint-covered squash balls onto the canvas 555 times. 
+        A unique piece that becomes truly mind-blowing when you consider what each ball mark represents!
+      </p>
     </div>
 
     <p><a href="portfolio.html">← Back to Portfolio</a></p>
@@ -58,7 +63,7 @@
     const prevBtn = document.querySelector(".lightbox-prev");
     const nextBtn = document.querySelector(".lightbox-next");
 
-    const items = Array.from(document.querySelectorAll(".media-block img, .media-block video"));
+    const items = Array.from(document.querySelectorAll(".portfolio-item img, .portfolio-item video"));
     let currentIndex = 0;
 
     function showLightbox(index) {
@@ -87,24 +92,4 @@
     });
 
     nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % items.length;
-      showLightbox(currentIndex);
-    });
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = "none";
-        lightboxContent.innerHTML = "";
-      }
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (lightbox.style.display === "flex") {
-        if (e.key === "ArrowLeft") prevBtn.click();
-        if (e.key === "ArrowRight") nextBtn.click();
-        if (e.key === "Escape") closeBtn.click();
-      }
-    });
-  </script>
-</body>
-</html>
+      currentIndex
