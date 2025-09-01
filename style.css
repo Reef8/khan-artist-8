@@ -1115,3 +1115,85 @@ section {
   top: 50%;
   transform: translateY(-50%);
 }
+/* PSA 2024 gallery layout */
+.psa-gallery {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.psa-gallery h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.psa-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+}
+
+.psa-images img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.psa-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Lightbox overrides (already in your page, optional here for safety) */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+.lightbox-content img {
+  max-width: 90vw;
+  max-height: 80vh;
+  display: block;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  color: #fff;
+  font-size: 2rem;
+  position: absolute;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lightbox-close {
+  top: 10px;
+  right: 20px;
+}
+
+.lightbox-prev {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
