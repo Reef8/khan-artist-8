@@ -3,140 +3,108 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Khan Artist - Yusuf Khan Invitational 2025</title>
+  <title>Khan Artist - PSA 2024</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+<header>
+  <div class="logo-container">
     <h1>Khan Artist</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="locations.html" class="active">Locations</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="collection">
-      <h2>Yusuf Khan Invitational 2025</h2>
-      <p>Seattle, WA – 2025</p>
-
-      <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="images/ysk25-1.jpeg" alt="Artwork 1 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-2.jpeg" alt="Artwork 2 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-3.jpeg" alt="Artwork 3 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-4.jpeg" alt="Artwork 4 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-5.jpeg" alt="Artwork 5 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-6.jpeg" alt="Artwork 6 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-7.jpeg" alt="Artwork 7 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-8.jpeg" alt="Artwork 8 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-9.jpeg" alt="Artwork 9 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-10.jpeg" alt="Artwork 10 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-11.jpeg" alt="Artwork 11 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-12.jpeg" alt="Artwork 12 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-13.jpeg" alt="Artwork 13 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-14.jpeg" alt="Artwork 14 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-15.jpeg" alt="Artwork 15 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-16.jpeg" alt="Artwork 16 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-17.jpeg" alt="Artwork 17 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-18.jpeg" alt="Artwork 18 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-19.jpeg" alt="Artwork 19 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-20.jpeg" alt="Artwork 20 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-21.jpeg" alt="Artwork 21 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-22.jpeg" alt="Artwork 22 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-23.jpeg" alt="Artwork 23 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-24.jpeg" alt="Artwork 24 from Yusuf Khan Invitational 2025">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk25-25.jpeg" alt="Artwork 25 from Yusuf Khan Invitational 2025">
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" alt="">
+    <img src="images/logo.png" alt="Khan Artist Logo" class="logo">
   </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="locations.html">Locations</a>
+    <a href="contact.html">Contact</a>
+    <a href="psa2024.html" class="active">PSA 2024</a>
+  </nav>
+</header>
 
-  <script>
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const close = document.querySelector('.close');
-    const images = document.querySelectorAll('.portfolio-item img');
+<!-- PSA 2024 Section -->
+<section class="making-art">
+  <h2>PSA 2024 Series</h2>
+  <div class="art-row">
+    <div class="art-item">
+      <img src="images/ysk25-1.jpeg" alt="PSA Artwork 1">
+      <p class="caption">PSA 2024 — Artwork 1</p>
+    </div>
+    <div class="art-item">
+      <img src="images/ysk25-2.jpeg" alt="PSA Artwork 2">
+      <p class="caption">PSA 2024 — Artwork 2</p>
+    </div>
+    <div class="art-item">
+      <img src="images/ysk25-3.jpeg" alt="PSA Artwork 3">
+      <p class="caption">PSA 2024 — Artwork 3</p>
+    </div>
+    <div class="art-item">
+      <img src="images/ysk25-4.jpeg" alt="PSA Artwork 4">
+      <p class="caption">PSA 2024 — Artwork 4</p>
+    </div>
+  </div>
+</section>
 
-    images.forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'block';
-        lightboxImg.src = img.src;
-      });
-    });
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <span class="lightbox-prev">&#10094;</span>
+  <div class="lightbox-content"></div>
+  <span class="lightbox-next">&#10095;</span>
+</div>
 
-    close.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
+<script>
+  const lightbox = document.getElementById("lightbox");
+  const lightboxContent = document.querySelector(".lightbox-content");
+  const closeBtn = document.querySelector(".lightbox-close");
+  const prevBtn = document.querySelector(".lightbox-prev");
+  const nextBtn = document.querySelector(".lightbox-next");
 
-    window.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-      }
-    });
+  const items = Array.from(document.querySelectorAll(".art-item img"));
+  let currentIndex = 0;
 
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        lightbox.style.display = 'none';
-      }
-    });
-  </script>
+  function showLightbox(index) {
+    currentIndex = index;
+    const item = items[index];
+    lightboxContent.innerHTML = `<img src="${item.src}" alt="" style="max-width:90vw; max-height:80vh; width:auto; height:auto; display:block; margin:auto; border-radius:8px;">`;
+    lightbox.style.display = "flex";
+  }
+
+  items.forEach((item, index) => {
+    item.addEventListener("click", () => showLightbox(index));
+  });
+
+  closeBtn.addEventListener("click", () => {
+    lightbox.style.display = "none";
+    lightboxContent.innerHTML = "";
+  });
+
+  prevBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    showLightbox(currentIndex);
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % items.length;
+    showLightbox(currentIndex);
+  });
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = "none";
+      lightboxContent.innerHTML = "";
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (lightbox.style.display === "flex") {
+      if (e.key === "ArrowLeft") prevBtn.click();
+      if (e.key === "ArrowRight") nextBtn.click();
+      if (e.key === "Escape") closeBtn.click();
+    }
+  });
+</script>
 </body>
 </html>
