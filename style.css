@@ -1204,3 +1204,15 @@ section {
   border-radius: 8px;
   object-fit: contain;
 }
+/* Lightbox images and videos should scale the same */
+.lightbox img,
+.lightbox video {
+  max-width: 90%;
+  max-height: 80%;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
