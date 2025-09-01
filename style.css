@@ -1197,3 +1197,10 @@ section {
   top: 50%;
   transform: translateY(-50%);
 }
+.lightbox img,
+.lightbox video {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+  object-fit: contain;
+}
