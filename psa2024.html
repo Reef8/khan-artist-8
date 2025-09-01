@@ -5,115 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khan Artist - PSA 2024</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-  <div class="logo-container">
+  <header>
     <h1>Khan Artist</h1>
-    <img src="images/logo.png" alt="Khan Artist Logo" class="logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="locations.html" class="active">Locations</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="collection">
+      <h2>PSA 2024</h2>
+      <p>Philadelphia, PA – 2024</p>
+
+      <div class="portfolio-grid">
+        <div class="portfolio-item"><img src="images/ysk25-1.jpeg" alt="PSA 2024 artwork 1" onclick="openModal(0)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-2.jpeg" alt="PSA 2024 artwork 2" onclick="openModal(1)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-3.jpeg" alt="PSA 2024 artwork 3" onclick="openModal(2)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-4.jpeg" alt="PSA 2024 artwork 4" onclick="openModal(3)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-5.jpeg" alt="PSA 2024 artwork 5" onclick="openModal(4)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-6.jpeg" alt="PSA 2024 artwork 6" onclick="openModal(5)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-7.jpeg" alt="PSA 2024 artwork 7" onclick="openModal(6)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-8.jpeg" alt="PSA 2024 artwork 8" onclick="openModal(7)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-9.jpeg" alt="PSA 2024 artwork 9" onclick="openModal(8)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-10.jpeg" alt="PSA 2024 artwork 10" onclick="openModal(9)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-11.jpeg" alt="PSA 2024 artwork 11" onclick="openModal(10)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-12.jpeg" alt="PSA 2024 artwork 12" onclick="openModal(11)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-13.jpeg" alt="PSA 2024 artwork 13" onclick="openModal(12)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-14.jpeg" alt="PSA 2024 artwork 14" onclick="openModal(13)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-15.jpeg" alt="PSA 2024 artwork 15" onclick="openModal(14)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-16.jpeg" alt="PSA 2024 artwork 16" onclick="openModal(15)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-17.jpeg" alt="PSA 2024 artwork 17" onclick="openModal(16)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-18.jpeg" alt="PSA 2024 artwork 18" onclick="openModal(17)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-19.jpeg" alt="PSA 2024 artwork 19" onclick="openModal(18)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-20.jpeg" alt="PSA 2024 artwork 20" onclick="openModal(19)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-21.jpeg" alt="PSA 2024 artwork 21" onclick="openModal(20)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-22.jpeg" alt="PSA 2024 artwork 22" onclick="openModal(21)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-23.jpeg" alt="PSA 2024 artwork 23" onclick="openModal(22)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-24.jpeg" alt="PSA 2024 artwork 24" onclick="openModal(23)"></div>
+        <div class="portfolio-item"><img src="images/ysk25-25.jpeg" alt="PSA 2024 artwork 25" onclick="openModal(24)"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal for zoom effect -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+    <a class="next" onclick="changeImage(1)">&#10095;</a>
   </div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="about.html">About</a>
-    <a href="locations.html">Locations</a>
-    <a href="contact.html">Contact</a>
-    <a href="psa2024.html" class="active">PSA 2024</a>
-  </nav>
-</header>
 
-<!-- PSA 2024 Section -->
-<section class="psa-gallery">
-  <h2>PSA 2024 Series</h2>
-  <div class="psa-images">
-    <img src="images/ysk25-1.jpeg" alt="PSA Artwork 1">
-    <img src="images/ysk25-2.jpeg" alt="PSA Artwork 2">
-    <img src="images/ysk25-3.jpeg" alt="PSA Artwork 3">
-    <img src="images/ysk25-4.jpeg" alt="PSA Artwork 4">
-    <img src="images/ysk25-5.jpeg" alt="PSA Artwork 5">
-    <img src="images/ysk25-6.jpeg" alt="PSA Artwork 6">
-    <img src="images/ysk25-7.jpeg" alt="PSA Artwork 7">
-    <img src="images/ysk25-8.jpeg" alt="PSA Artwork 8">
-    <img src="images/ysk25-9.jpeg" alt="PSA Artwork 9">
-    <img src="images/ysk25-10.jpeg" alt="PSA Artwork 10">
-    <img src="images/ysk25-11.jpeg" alt="PSA Artwork 11">
-    <img src="images/ysk25-12.jpeg" alt="PSA Artwork 12">
-    <img src="images/ysk25-13.jpeg" alt="PSA Artwork 13">
-    <img src="images/ysk25-14.jpeg" alt="PSA Artwork 14">
-    <img src="images/ysk25-15.jpeg" alt="PSA Artwork 15">
-    <img src="images/ysk25-16.jpeg" alt="PSA Artwork 16">
-    <img src="images/ysk25-17.jpeg" alt="PSA Artwork 17">
-    <img src="images/ysk25-18.jpeg" alt="PSA Artwork 18">
-    <img src="images/ysk25-19.jpeg" alt="PSA Artwork 19">
-    <img src="images/ysk25-20.jpeg" alt="PSA Artwork 20">
-    <img src="images/ysk25-21.jpeg" alt="PSA Artwork 21">
-    <img src="images/ysk25-22.jpeg" alt="PSA Artwork 22">
-    <img src="images/ysk25-23.jpeg" alt="PSA Artwork 23">
-    <img src="images/ysk25-24.jpeg" alt="PSA Artwork 24">
-    <img src="images/ysk25-25.jpeg" alt="PSA Artwork 25">
-  </div>
-</section>
+  <script>
+    const images = [
+      "images/ysk25-1.jpeg","images/ysk25-2.jpeg","images/ysk25-3.jpeg","images/ysk25-4.jpeg","images/ysk25-5.jpeg",
+      "images/ysk25-6.jpeg","images/ysk25-7.jpeg","images/ysk25-8.jpeg","images/ysk25-9.jpeg","images/ysk25-10.jpeg",
+      "images/ysk25-11.jpeg","images/ysk25-12.jpeg","images/ysk25-13.jpeg","images/ysk25-14.jpeg","images/ysk25-15.jpeg",
+      "images/ysk25-16.jpeg","images/ysk25-17.jpeg","images/ysk25-18.jpeg","images/ysk25-19.jpeg","images/ysk25-20.jpeg",
+      "images/ysk25-21.jpeg","images/ysk25-22.jpeg","images/ysk25-23.jpeg","images/ysk25-24.jpeg","images/ysk25-25.jpeg"
+    ];
+    let currentIndex = 0;
 
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox">
-  <span class="lightbox-close">&times;</span>
-  <span class="lightbox-prev">&#10094;</span>
-  <div class="lightbox-content"></div>
-  <span class="lightbox-next">&#10095;</span>
-</div>
-
-<script>
-  const lightbox = document.getElementById("lightbox");
-  const lightboxContent = document.querySelector(".lightbox-content");
-  const closeBtn = document.querySelector(".lightbox-close");
-  const prevBtn = document.querySelector(".lightbox-prev");
-  const nextBtn = document.querySelector(".lightbox-next");
-
-  const items = Array.from(document.querySelectorAll(".psa-images img"));
-  let currentIndex = 0;
-
-  function showLightbox(index) {
-    currentIndex = index;
-    const item = items[index];
-    lightboxContent.innerHTML = `<img src="${item.src}" alt="" style="max-width:90vw; max-height:80vh; width:auto; height:auto; display:block; margin:auto; border-radius:8px;">`;
-    lightbox.style.display = "flex";
-  }
-
-  items.forEach((item, index) => {
-    item.addEventListener("click", () => showLightbox(index));
-  });
-
-  closeBtn.addEventListener("click", () => {
-    lightbox.style.display = "none";
-    lightboxContent.innerHTML = "";
-  });
-
-  prevBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    showLightbox(currentIndex);
-  });
-
-  nextBtn.addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % items.length;
-    showLightbox(currentIndex);
-  });
-
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      lightbox.style.display = "none";
-      lightboxContent.innerHTML = "";
+    function openModal(index) {
+      currentIndex = index;
+      document.getElementById("imageModal").style.display = "block";
+      document.getElementById("modalImage").src = images[index];
     }
-  });
 
-  document.addEventListener("keydown", (e) => {
-    if (lightbox.style.display === "flex") {
-      if (e.key === "ArrowLeft") prevBtn.click();
-      if (e.key === "ArrowRight") nextBtn.click();
-      if (e.key === "Escape") closeBtn.click();
+    function closeModal() {
+      document.getElementById("imageModal").style.display = "none";
     }
-  });
-</script>
+
+    function changeImage(n) {
+      currentIndex = (currentIndex + n + images.length) % images.length;
+      document.getElementById("modalImage").src = images[currentIndex];
+    }
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") closeModal();
+      if (event.key === "ArrowRight") changeImage(1);
+      if (event.key === "ArrowLeft") changeImage(-1);
+    });
+  </script>
 </body>
 </html>
