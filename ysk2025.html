@@ -25,21 +25,22 @@
 
       <div class="portfolio-grid">
         <div class="portfolio-item">
-  <figure>
-    <img src="images/yk1.jpeg" alt="Artwork 1 from Wildwood Market and Eatery">
-    <figcaption>If ever "555" with only two colors being used. This piece jumps out with bright colors, and was a hit at the tournament.</figcaption>
-  </figure>
-</div>
+          <figure>
+            <img class="lightbox-trigger" src="images/yk1.jpeg" alt="Artwork 1">
+            <figcaption>If ever "555" with only two colors being used. This piece jumps out with bright colors, and was a hit at the tournament.</figcaption>
+          </figure>
+        </div>
 
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk2.jpeg" alt="Artwork 2"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk3.jpeg" alt="Artwork 3"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk4.jpeg" alt="Artwork 4"></div>
+
         <div class="portfolio-item">
-  <figure>
-    <img src="images/yk5.jpeg" alt="Artwork 1 from Wildwood Market and Eatery">
-    <figcaption>What would the sky look like if the constellations were squash rackets? "Among the Stars," gives us some insight on that!</figcaption>
-  </figure>
-</div>
+          <figure>
+            <img class="lightbox-trigger" src="images/yk5.jpeg" alt="Artwork 5">
+            <figcaption>What would the sky look like if the constellations were squash rackets? "Among the Stars," gives us some insight on that!</figcaption>
+          </figure>
+        </div>
 
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk6.jpeg" alt="Artwork 6"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk7.jpeg" alt="Artwork 7"></div>
@@ -48,25 +49,28 @@
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk10.jpeg" alt="Artwork 10"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk11.jpeg" alt="Artwork 11"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk12.jpeg" alt="Artwork 12"></div>
+
         <div class="portfolio-item">
-  <figure>
-    <img src="images/yk13.jpeg" alt="Artwork 1 from Wildwood Market and Eatery">
-    <figcaption>Another unique twist on the fan favorite "555" painting.</figcaption>
-  </figure>
-</div>
+          <figure>
+            <img class="lightbox-trigger" src="images/yk13.jpeg" alt="Artwork 13">
+            <figcaption>Another unique twist on the fan favorite "555" painting.</figcaption>
+          </figure>
+        </div>
+
         <div class="portfolio-item">
-  <figure>
-    <img src="images/yk14.jpeg" alt="Artwork 1 from Wildwood Market and Eatery">
-    <figcaption>At first glance, you might wonder why this drawing is at a squash art exhibit... but look again, how many hidden squash balls can you find???</figcaption>
-  </figure>
-</div>
+          <figure>
+            <img class="lightbox-trigger" src="images/yk14.jpeg" alt="Artwork 14">
+            <figcaption>At first glance, you might wonder why this drawing is at a squash art exhibit... but look again, how many hidden squash balls can you find???</figcaption>
+          </figure>
+        </div>
+
         <div class="portfolio-item">
-  <figure>
-    <img src="images/yk15.jpeg" alt="Artwork 1 from Wildwood Market and Eatery">
-    <figcaption>Some of the junior players trying to find all the hidden squash balls!</figcaption>
-  </figure>
-</div>
-        <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk15.jpeg" alt="Artwork 15"></div>
+          <figure>
+            <img class="lightbox-trigger" src="images/yk15.jpeg" alt="Artwork 15">
+            <figcaption>Some of the junior players trying to find all the hidden squash balls!</figcaption>
+          </figure>
+        </div>
+
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk16.jpeg" alt="Artwork 16"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk17.jpeg" alt="Artwork 17"></div>
       </div>
@@ -117,14 +121,12 @@
       showLightbox(currentIndex);
     });
 
-    // Close lightbox by clicking outside the image
     lightbox.addEventListener('click', e => {
       if (e.target === lightbox) {
         lightbox.style.display = 'none';
       }
     });
 
-    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
       if (lightbox.style.display === 'flex') {
         if (e.key === 'ArrowLeft') prevBtn.click();
