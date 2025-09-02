@@ -5,71 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khan Artist - Wildwood Market and Eatery</title>
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    /* Modal (hidden by default) */
-    .modal {
-      display: none; /* hide at first */
-      position: fixed;
-      z-index: 1000;
-      padding-top: 60px;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.9);
-    }
-
-    /* Modal Content (the image itself) */
-    .modal-content {
-      margin: auto;
-      display: block;
-      max-width: 80%;
-      max-height: 80%;
-      object-fit: contain; /* prevents stretching */
-    }
-
-    /* Caption */
-    #caption {
-      margin: auto;
-      display: block;
-      text-align: center;
-      color: #ccc;
-      padding: 10px 0;
-    }
-
-    /* Close button */
-    .close {
-      position: absolute;
-      top: 20px;
-      right: 35px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    /* Navigation arrows */
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 16px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: bold;
-      user-select: none;
-    }
-
-    .prev { left: 20px; }
-    .next { right: 20px; }
-
-    .prev:hover, .next:hover, .close:hover {
-      color: #ccc;
-    }
-  </style>
 </head>
 <body>
   <header>
@@ -88,99 +23,80 @@
       <h2>Wildwood Market and Eatery</h2>
       <p>West Seattle, WA – 2024</p>
 
-      <div class="art-row">
-        <div class="art-item">
-          <img src="images/ww1.jpeg" alt="Artwork 1 from Wildwood Market and Eatery" onclick="openModal(0)">
-          <p class="caption">Piece Title 1</p>
-        </div>
-        <div class="art-item">
-          <img src="images/ww2.jpeg" alt="Artwork 2 from Wildwood Market and Eatery" onclick="openModal(1)">
-          <p class="caption">Piece Title 2</p>
-        </div>
-        <div class="art-item">
-          <img src="images/ww3.jpeg" alt="Artwork 3 from Wildwood Market and Eatery" onclick="openModal(2)">
-          <p class="caption">Piece Title 3</p>
-        </div>
-        <div class="art-item">
-          <img src="images/ww4.jpeg" alt="Artwork 4 from Wildwood Market and Eatery" onclick="openModal(3)">
-          <p class="caption">Piece Title 4</p>
-        </div>
-        <div class="art-item">
-          <img src="images/ww5.jpeg" alt="Artwork 5 from Wildwood Market and Eatery" onclick="openModal(4)">
-          <p class="caption">Piece Title 5</p>
-        </div>
-        <div class="art-item">
-          <img src="images/ww6.jpeg" alt="Artwork 6 from Wildwood Market and Eatery" onclick="openModal(5)">
-          <p class="caption">Piece Title 6</p>
-        </div>
-        <div class="art-item">
-          <img src="images/ww7.jpeg" alt="Artwork 7 from Wildwood Market and Eatery" onclick="openModal(6)">
-          <p class="caption">Piece Title 7</p>
-        </div>
-        <div class="art-item">
-          <img src="images/ww8.jpeg" alt="Artwork 8 from Wildwood Market and Eatery" onclick="openModal(7)">
-          <p class="caption">Piece Title 8</p>
-        </div>
-        <div class="art-item">
-          <img src="images/ww9.jpeg" alt="Artwork 9 from Wildwood Market and Eatery" onclick="openModal(8)">
-          <p class="caption">Piece Title 9</p>
-        </div>
-        <div class="art-item">
-          <img src="images/ww10.jpeg" alt="Artwork 10 from Wildwood Market and Eatery" onclick="openModal(9)">
-          <p class="caption">Piece Title 10</p>
-        </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-1.jpeg" alt="Jewelbox artwork 1"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-2.jpeg" alt="Jewelbox artwork 2"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-3.jpeg" alt="Jewelbox artwork 3"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-4.jpeg" alt="Jewelbox artwork 4"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-5.jpeg" alt="Jewelbox artwork 5"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-6.jpeg" alt="Jewelbox artwork 6"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-7.jpeg" alt="Jewelbox artwork 7"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-8.jpeg" alt="Jewelbox artwork 8"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-9.jpeg" alt="Jewelbox artwork 9"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-10.jpeg" alt="Jewelbox artwork 10"></div>
       </div>
     </section>
   </main>
 
-  <!-- Modal -->
-  <div id="myModal" class="modal">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img class="modal-content" id="modalImage">
-    <div id="caption"></div>
-    <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
-    <a class="next" onclick="changeSlide(1)">&#10095;</a>
+  <!-- Lightbox modal with navigation -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged artwork">
+    <span class="lightbox-next">&#10095;</span>
   </div>
 
   <script>
-    const images = [
-      {src: "images/ww1.jpeg", caption: "Piece Title 1"},
-      {src: "images/ww2.jpeg", caption: "Piece Title 2"},
-      {src: "images/ww3.jpeg", caption: "Piece Title 3"},
-      {src: "images/ww4.jpeg", caption: "Piece Title 4"},
-      {src: "images/ww5.jpeg", caption: "Piece Title 5"},
-      {src: "images/ww6.jpeg", caption: "Piece Title 6"},
-      {src: "images/ww7.jpeg", caption: "Piece Title 7"},
-      {src: "images/ww8.jpeg", caption: "Piece Title 8"},
-      {src: "images/ww9.jpeg", caption: "Piece Title 9"},
-      {src: "images/ww10.jpeg", caption: "Piece Title 10"}
-    ];
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    const triggers = document.querySelectorAll('.lightbox-trigger');
 
     let currentIndex = 0;
 
-    function openModal(index) {
+    const showLightbox = (index) => {
+      const img = triggers[index];
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
       currentIndex = index;
-      document.getElementById("myModal").style.display = "block";
-      updateModal();
     }
 
-    function closeModal() {
-      document.getElementById("myModal").style.display = "none";
-    }
+    triggers.forEach((img, index) => {
+      img.addEventListener('click', () => showLightbox(index));
+    });
 
-    function changeSlide(step) {
-      currentIndex += step;
-      if (currentIndex < 0) currentIndex = images.length - 1;
-      if (currentIndex >= images.length) currentIndex = 0;
-      updateModal();
-    }
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
 
-    function updateModal() {
-      const modalImage = document.getElementById("modalImage");
-      const captionText = document.getElementById("caption");
-      modalImage.src = images[currentIndex].src;
-      captionText.innerHTML = images[currentIndex].caption;
-    }
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + triggers.length) % triggers.length;
+      showLightbox(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % triggers.length;
+      showLightbox(currentIndex);
+    });
+
+    // Close lightbox by clicking outside the image
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+        if (e.key === 'Escape') closeBtn.click();
+      }
+    });
   </script>
 </body>
 </html>
