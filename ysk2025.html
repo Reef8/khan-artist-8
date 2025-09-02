@@ -27,13 +27,22 @@
         <div class="portfolio-item">
           <figure>
             <img class="lightbox-trigger" src="images/yk1.jpeg" alt="Artwork 1">
-            <figcaption>If ever "555" with only two colors being used. This piece jumps out with bright colors, and was a hit at the tournament.</figcaption>
+            <figcaption>The first ever "555" with only two colors being used. This piece jumps out with bright colors, and was a hit at the tournament.</figcaption>
           </figure>
         </div>
 
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk2.jpeg" alt="Artwork 2"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk3.jpeg" alt="Artwork 3"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk4.jpeg" alt="Artwork 4"></div>
+        
+          <!-- Video example -->
+        <div class="portfolio-item">
+          <figure>
+            <video class="lightbox-content" id="lightbox-video" controls muted autoplay style="display:none;"></video>
+            <figcaption>A short video clip showing live action from the tournament.</figcaption>
+          </figure>
+        </div>
+
 
         <div class="portfolio-item">
           <figure>
@@ -47,15 +56,6 @@
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk8.jpeg" alt="Artwork 8"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk9.jpeg" alt="Artwork 9"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk10.jpeg" alt="Artwork 10"></div>
-
-        <!-- Video example -->
-        <div class="portfolio-item">
-          <figure>
-            <video class="lightbox-trigger" src="videos/coralupclose.mp4" muted></video>
-            <figcaption>A short video clip showing live action from the tournament.</figcaption>
-          </figure>
-        </div>
-
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk11.jpeg" alt="Artwork 11"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk12.jpeg" alt="Artwork 12"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk13.jpeg" alt="Artwork 13"></div>
@@ -89,23 +89,24 @@
 
     let currentIndex = 0;
 
-    const showLightbox = (index) => {
-      const item = triggers[index];
-      lightbox.style.display = 'flex';
-      if(item.tagName.toLowerCase() === 'video') {
-        lightboxImg.style.display = 'none';
-        lightboxVideo.style.display = 'block';
-        lightboxVideo.src = item.src;
-        lightboxVideo.play();
-      } else {
-        lightboxVideo.style.display = 'none';
-        lightboxImg.style.display = 'block';
-        lightboxImg.src = item.src;
-        lightboxVideo.pause();
-        lightboxVideo.src = '';
-      }
-      currentIndex = index;
-    }
+const showLightbox = (index) => {
+  const item = triggers[index];
+  lightbox.style.display = 'flex';
+  if(item.tagName.toLowerCase() === 'video') {
+    lightboxImg.style.display = 'none';
+    lightboxVideo.style.display = 'block';
+    lightboxVideo.src = item.src;
+    lightboxVideo.muted = true; // ensure muted
+    lightboxVideo.play();       // autoplay
+  } else {
+    lightboxVideo.style.display = 'none';
+    lightboxImg.style.display = 'block';
+    lightboxImg.src = item.src;
+    lightboxVideo.pause();
+    lightboxVideo.src = '';
+  }
+  currentIndex = index;
+}
 
     triggers.forEach((item, index) => {
       item.addEventListener('click', () => showLightbox(index));
