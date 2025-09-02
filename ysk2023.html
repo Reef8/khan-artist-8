@@ -5,6 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khan Artist - Yusuf Khan Invitational 2023</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 30px;
+      user-select: none;
+      transition: 0.3s;
+    }
+
+    .prev:hover, .next:hover {
+      color: #f1f1f1;
+    }
+
+    .prev {
+      left: 20px;
+    }
+
+    .next {
+      right: 20px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -24,38 +82,64 @@
       <p>Seattle, WA – 2023</p>
 
       <div class="portfolio-grid">
-        <div class="portfolio-item">
-          <img src="images/ysk23-1.jpeg" alt="Artwork 1 from Yusuf Khan Invitational 2023">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk23-2.jpeg" alt="Artwork 2 from Yusuf Khan Invitational 2023">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk23-3.jpeg" alt="Artwork 3 from Yusuf Khan Invitational 2023">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk23-4.jpeg" alt="Artwork 4 from Yusuf Khan Invitational 2023">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk23-5.jpeg" alt="Artwork 5 from Yusuf Khan Invitational 2023">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk23-6.jpeg" alt="Artwork 6 from Yusuf Khan Invitational 2023">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk23-7.jpeg" alt="Artwork 7 from Yusuf Khan Invitational 2023">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk23-8.jpeg" alt="Artwork 8 from Yusuf Khan Invitational 2023">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk23-9.jpeg" alt="Artwork 9 from Yusuf Khan Invitational 2023">
-        </div>
-        <div class="portfolio-item">
-          <img src="images/ysk23-10.jpeg" alt="Artwork 10 from Yusuf Khan Invitational 2023">
-        </div>
+        <div class="portfolio-item"><img src="images/ysk23-1.jpeg" alt="Artwork 1 from Yusuf Khan Invitational 2023"></div>
+        <div class="portfolio-item"><img src="images/ysk23-2.jpeg" alt="Artwork 2 from Yusuf Khan Invitational 2023"></div>
+        <div class="portfolio-item"><img src="images/ysk23-3.jpeg" alt="Artwork 3 from Yusuf Khan Invitational 2023"></div>
+        <div class="portfolio-item"><img src="images/ysk23-4.jpeg" alt="Artwork 4 from Yusuf Khan Invitational 2023"></div>
+        <div class="portfolio-item"><img src="images/ysk23-5.jpeg" alt="Artwork 5 from Yusuf Khan Invitational 2023"></div>
+        <div class="portfolio-item"><img src="images/ysk23-6.jpeg" alt="Artwork 6 from Yusuf Khan Invitational 2023"></div>
+        <div class="portfolio-item"><img src="images/ysk23-7.jpeg" alt="Artwork 7 from Yusuf Khan Invitational 2023"></div>
+        <div class="portfolio-item"><img src="images/ysk23-8.jpeg" alt="Artwork 8 from Yusuf Khan Invitational 2023"></div>
+        <div class="portfolio-item"><img src="images/ysk23-9.jpeg" alt="Artwork 9 from Yusuf Khan Invitational 2023"></div>
+        <div class="portfolio-item"><img src="images/ysk23-10.jpeg" alt="Artwork 10 from Yusuf Khan Invitational 2023"></div>
       </div>
     </section>
   </main>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <span class="prev">&#10094;</span>
+    <img class="modal-content" id="modalImg">
+    <span class="next">&#10095;</span>
+  </div>
+
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImg");
+    const images = document.querySelectorAll(".portfolio-item img");
+    const closeBtn = document.querySelector(".close");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    let currentIndex = 0;
+
+    images.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        currentIndex = index;
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      modalImg.src = images[currentIndex].src;
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      modalImg.src = images[currentIndex].src;
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
