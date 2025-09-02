@@ -24,7 +24,6 @@
       <p>Another fun and successful auction at the Yusuf Khan Invitational in Bellevue, WA. Some classics (with some twists) were brought back like "555", but also a variety of brand new pieces were auctioned off!</p>
 
       <div class="portfolio-grid">
-        <!-- Image with caption -->
         <div class="portfolio-item">
           <figure>
             <img class="lightbox-trigger" src="images/yk1.jpeg" alt="Artwork 1">
@@ -34,16 +33,16 @@
 
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk2.jpeg" alt="Artwork 2"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk3.jpeg" alt="Artwork 3"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk4.jpeg" alt="Artwork 4"></div>
 
-        <!-- Video trigger -->
+        <!-- Video in grid autoplaying muted -->
         <div class="portfolio-item">
           <figure>
-            <video class="lightbox-trigger" src="videos/coralupclose.mp4" muted style="width:200px; cursor:pointer;"></video>
+            <video class="lightbox-trigger" src="videos/coralupclose.mp4" muted autoplay loop playsinline></video>
             <figcaption>An up close look at the ball marks from being hit against the canvas.</figcaption>
           </figure>
         </div>
 
-        <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk4.jpeg" alt="Artwork 4"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk5.jpeg" alt="Artwork 5"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk6.jpeg" alt="Artwork 6"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk7.jpeg" alt="Artwork 7"></div>
@@ -61,13 +60,13 @@
     </section>
   </main>
 
-  <!-- Lightbox modal -->
+  <!-- Lightbox modal with navigation -->
   <div class="lightbox" id="lightbox">
     <span class="lightbox-close">&times;</span>
     <span class="lightbox-prev">&#10094;</span>
     <div class="lightbox-content-container">
       <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged artwork" style="display:none;">
-      <video class="lightbox-content" id="lightbox-video" controls muted autoplay style="display:none;"></video>
+      <video class="lightbox-content" id="lightbox-video" controls autoplay muted style="display:none;"></video>
     </div>
     <span class="lightbox-next">&#10095;</span>
   </div>
@@ -86,12 +85,12 @@
     const showLightbox = (index) => {
       const item = triggers[index];
       lightbox.style.display = 'flex';
-
       if(item.tagName.toLowerCase() === 'video') {
         lightboxImg.style.display = 'none';
         lightboxVideo.style.display = 'block';
         lightboxVideo.src = item.src;
         lightboxVideo.muted = true;
+        lightboxVideo.autoplay = true;
         lightboxVideo.play();
       } else {
         lightboxVideo.style.display = 'none';
@@ -100,7 +99,6 @@
         lightboxVideo.pause();
         lightboxVideo.src = '';
       }
-
       currentIndex = index;
     }
 
