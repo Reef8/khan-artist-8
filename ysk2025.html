@@ -47,30 +47,20 @@
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk8.jpeg" alt="Artwork 8"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk9.jpeg" alt="Artwork 9"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk10.jpeg" alt="Artwork 10"></div>
+
+        <!-- Video example -->
+        <div class="portfolio-item">
+          <figure>
+            <video class="lightbox-trigger" src="videos/coralupclose.mp4" muted></video>
+            <figcaption>A short video clip showing live action from the tournament.</figcaption>
+          </figure>
+        </div>
+
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk11.jpeg" alt="Artwork 11"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk12.jpeg" alt="Artwork 12"></div>
-
-        <div class="portfolio-item">
-          <figure>
-            <img class="lightbox-trigger" src="images/yk13.jpeg" alt="Artwork 13">
-            <figcaption>Another unique twist on the fan favorite "555" painting.</figcaption>
-          </figure>
-        </div>
-
-        <div class="portfolio-item">
-          <figure>
-            <img class="lightbox-trigger" src="images/yk14.jpeg" alt="Artwork 14">
-            <figcaption>At first glance, you might wonder why this drawing is at a squash art exhibit... but look again, how many hidden squash balls can you find???</figcaption>
-          </figure>
-        </div>
-
-        <div class="portfolio-item">
-          <figure>
-            <img class="lightbox-trigger" src="images/yk15.jpeg" alt="Artwork 15">
-            <figcaption>Some of the junior players trying to find all the hidden squash balls!</figcaption>
-          </figure>
-        </div>
-
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk13.jpeg" alt="Artwork 13"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk14.jpeg" alt="Artwork 14"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk15.jpeg" alt="Artwork 15"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk16.jpeg" alt="Artwork 16"></div>
         <div class="portfolio-item"><img class="lightbox-trigger" src="images/yk17.jpeg" alt="Artwork 17"></div>
       </div>
@@ -81,13 +71,17 @@
   <div class="lightbox" id="lightbox">
     <span class="lightbox-close">&times;</span>
     <span class="lightbox-prev">&#10094;</span>
-    <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged artwork">
+    <div class="lightbox-content-container">
+      <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged artwork" style="display:none;">
+      <video class="lightbox-content" id="lightbox-video" controls style="display:none;"></video>
+    </div>
     <span class="lightbox-next">&#10095;</span>
   </div>
 
   <script>
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideo = document.getElementById('lightbox-video');
     const closeBtn = document.querySelector('.lightbox-close');
     const prevBtn = document.querySelector('.lightbox-prev');
     const nextBtn = document.querySelector('.lightbox-next');
@@ -96,19 +90,31 @@
     let currentIndex = 0;
 
     const showLightbox = (index) => {
-      const img = triggers[index];
+      const item = triggers[index];
       lightbox.style.display = 'flex';
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
+      if(item.tagName.toLowerCase() === 'video') {
+        lightboxImg.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = item.src;
+        lightboxVideo.play();
+      } else {
+        lightboxVideo.style.display = 'none';
+        lightboxImg.style.display = 'block';
+        lightboxImg.src = item.src;
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
+      }
       currentIndex = index;
     }
 
-    triggers.forEach((img, index) => {
-      img.addEventListener('click', () => showLightbox(index));
+    triggers.forEach((item, index) => {
+      item.addEventListener('click', () => showLightbox(index));
     });
 
     closeBtn.addEventListener('click', () => {
       lightbox.style.display = 'none';
+      lightboxVideo.pause();
+      lightboxVideo.src = '';
     });
 
     prevBtn.addEventListener('click', () => {
@@ -124,6 +130,8 @@
     lightbox.addEventListener('click', e => {
       if (e.target === lightbox) {
         lightbox.style.display = 'none';
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
       }
     });
 
