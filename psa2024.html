@@ -5,187 +5,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khan Artist - PSA World Tour Finals 2024</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
-
-    .portfolio-item img,
-    .portfolio-item video {
-      width: 100%;
-      height: auto;
-      display: block;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-
-    .portfolio-item img:hover,
-    .portfolio-item video:hover {
-      transform: scale(1.05);
-    }
-
-    /* Lightbox */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
-    }
-
-    .lightbox-content img,
-    .lightbox-content video {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 8px;
-    }
-
-    .lightbox .close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 40px;
-      color: white;
-      cursor: pointer;
-    }
-
-    .lightbox .prev,
-    .lightbox .next {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 40px;
-      color: white;
-      cursor: pointer;
-      padding: 20px;
-      user-select: none;
-    }
-
-    .lightbox .prev { left: 0; }
-    .lightbox .next { right: 0; }
-  </style>
 </head>
 <body>
   <header>
     <h1>Khan Artist</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About</a>
-      <a href="locations.html">Locations</a>
+      <a href="locations.html" class="active">Locations</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
   <main>
     <section class="collection">
-      <h2>PSA World Tour Finals 2024, Bellevue, WA</h2>
-      <p>This squash related collection was created to enhance an already incredible squash tournament: The PSA World Tour Finals. Each piece in the collection was sold.</p>
+      <h2>Jewelbox</h2>
+      <p>Seattle, WA – 2023</p>
 
       <div class="portfolio-grid">
-        <!-- Images -->
-        <div class="portfolio-item"><img src="images/ysk25-1.jpeg" alt="PSA artwork 1"></div>
-        <div class="portfolio-item"><img src="images/ysk25-2.jpeg" alt="PSA artwork 2"></div>
-        <div class="portfolio-item"><img src="images/ysk25-3.jpeg" alt="PSA artwork 3"></div>
-        <div class="portfolio-item"><img src="images/ysk25-4.jpeg" alt="PSA artwork 4"></div>
-        <div class="portfolio-item"><img src="images/ysk25-5.jpeg" alt="PSA artwork 5"></div>
-        <div class="portfolio-item"><img src="images/ysk25-6.jpeg" alt="PSA artwork 6"></div>
-        <div class="portfolio-item"><img src="images/ysk25-7.jpeg" alt="PSA artwork 7"></div>
-        <div class="portfolio-item"><img src="images/ysk25-8.jpeg" alt="PSA artwork 8"></div>
-        <div class="portfolio-item"><img src="images/ysk25-9.jpeg" alt="PSA artwork 9"></div>
-        <div class="portfolio-item"><img src="images/ysk25-10.jpeg" alt="PSA artwork 10"></div>
-        <div class="portfolio-item"><img src="images/ysk25-11.jpeg" alt="PSA artwork 11"></div>
-        <div class="portfolio-item"><img src="images/ysk25-12.jpeg" alt="PSA artwork 12"></div>
-        <div class="portfolio-item"><img src="images/ysk25-13.jpeg" alt="PSA artwork 13"></div>
-        <div class="portfolio-item"><img src="images/ysk25-14.jpeg" alt="PSA artwork 14"></div>
-        <div class="portfolio-item"><img src="images/ysk25-15.jpeg" alt="PSA artwork 15"></div>
-        <div class="portfolio-item"><img src="images/ysk25-16.jpeg" alt="PSA artwork 16"></div>
-        <div class="portfolio-item"><img src="images/ysk25-17.jpeg" alt="PSA artwork 17"></div>
-        <div class="portfolio-item"><img src="images/ysk25-18.jpeg" alt="PSA artwork 18"></div>
-        <div class="portfolio-item"><img src="images/ysk25-19.jpeg" alt="PSA artwork 19"></div>
-        <div class="portfolio-item"><img src="images/ysk25-20.jpeg" alt="PSA artwork 20"></div>
-        <div class="portfolio-item"><img src="images/ysk25-21.jpeg" alt="PSA artwork 21"></div>
-        <div class="portfolio-item"><img src="images/ysk25-22.jpeg" alt="PSA artwork 22"></div>
-        <div class="portfolio-item"><img src="images/ysk25-23.jpeg" alt="PSA artwork 23"></div>
-        <div class="portfolio-item"><img src="images/ysk25-24.jpeg" alt="PSA artwork 24"></div>
-        <div class="portfolio-item"><img src="images/ysk25-25.jpeg" alt="PSA artwork 25"></div>
-
-        <!-- Videos -->
-        <div class="portfolio-item">
-          <video autoplay muted loop playsinline>
-            <source src="videos/ysk25v1.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="portfolio-item">
-          <video autoplay muted loop playsinline>
-            <source src="videos/ysk25v2.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-1.jpeg" alt="Jewelbox artwork 1"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-2.jpeg" alt="Jewelbox artwork 2"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-3.jpeg" alt="Jewelbox artwork 3"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-4.jpeg" alt="Jewelbox artwork 4"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-5.jpeg" alt="Jewelbox artwork 5"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-6.jpeg" alt="Jewelbox artwork 6"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-7.jpeg" alt="Jewelbox artwork 7"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-8.jpeg" alt="Jewelbox artwork 8"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-9.jpeg" alt="Jewelbox artwork 9"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-10.jpeg" alt="Jewelbox artwork 10"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-11.jpeg" alt="Jewelbox artwork 11"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-12.jpeg" alt="Jewelbox artwork 12"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-13.jpeg" alt="Jewelbox artwork 13"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-14.jpeg" alt="Jewelbox artwork 14"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-15.jpeg" alt="Jewelbox artwork 15"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-16.jpeg" alt="Jewelbox artwork 16"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-17.jpeg" alt="Jewelbox artwork 17"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-18.jpeg" alt="Jewelbox artwork 18"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-19.jpeg" alt="Jewelbox artwork 19"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-20.jpeg" alt="Jewelbox artwork 20"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-21.jpeg" alt="Jewelbox artwork 21"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-22.jpeg" alt="Jewelbox artwork 22"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-23.jpeg" alt="Jewelbox artwork 23"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-24.jpeg" alt="Jewelbox artwork 24"></div>
+        <div class="portfolio-item"><img class="lightbox-trigger" src="images/ysk25-25.jpeg" alt="Jewelbox artwork 25"></div>
       </div>
     </section>
   </main>
 
-  <!-- Lightbox -->
-  <div class="lightbox">
-    <span class="close">&times;</span>
-    <span class="prev">&#10094;</span>
-    <div class="lightbox-content"></div>
-    <span class="next">&#10095;</span>
+  <!-- Lightbox modal with navigation -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged artwork">
+    <span class="lightbox-next">&#10095;</span>
   </div>
 
   <script>
-    const items = document.querySelectorAll('.portfolio-item img, .portfolio-item video');
-    const lightbox = document.querySelector('.lightbox');
-    const lightboxContent = document.querySelector('.lightbox-content');
-    const closeBtn = document.querySelector('.lightbox .close');
-    const prevBtn = document.querySelector('.lightbox .prev');
-    const nextBtn = document.querySelector('.lightbox .next');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    const triggers = document.querySelectorAll('.lightbox-trigger');
+
     let currentIndex = 0;
 
-    function openLightbox(index) {
+    const showLightbox = (index) => {
+      const img = triggers[index];
       lightbox.style.display = 'flex';
-      const element = items[index].cloneNode(true);
-
-      // If it's a video, make it playable in the lightbox
-      if (element.tagName === 'VIDEO') {
-        element.removeAttribute('autoplay');
-        element.removeAttribute('muted');
-        element.removeAttribute('loop');
-        element.controls = true;
-      }
-
-      lightboxContent.innerHTML = '';
-      lightboxContent.appendChild(element);
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
       currentIndex = index;
     }
 
-    items.forEach((item, i) => {
-      item.addEventListener('click', () => openLightbox(i));
+    triggers.forEach((img, index) => {
+      img.addEventListener('click', () => showLightbox(index));
     });
 
     closeBtn.addEventListener('click', () => {
       lightbox.style.display = 'none';
-      lightboxContent.innerHTML = '';
     });
 
     prevBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
-      openLightbox(currentIndex);
+      currentIndex = (currentIndex - 1 + triggers.length) % triggers.length;
+      showLightbox(currentIndex);
     });
 
     nextBtn.addEventListener('click', () => {
-      currentIndex = (currentIndex + 1) % items.length;
-      openLightbox(currentIndex);
+      currentIndex = (currentIndex + 1) % triggers.length;
+      showLightbox(currentIndex);
+    });
+
+    // Close lightbox by clicking outside the image
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+        if (e.key === 'Escape') closeBtn.click();
+      }
     });
   </script>
 </body>
