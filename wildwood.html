@@ -21,19 +21,68 @@
   <main>
     <section class="collection">
       <h2>Wildwood Market and Eatery</h2>
-      <p>West Seattle, WA – 2021</p>
+      <p>West Seattle, WA – 2024</p>
 
-      <div class="art-row">
-        <div class="art-item">
-          <img src="images/wildwood_art1.jpeg" alt="Artwork 1 from Wildwood Market and Eatery">
-          <p class="caption">Piece Title 1</p>
-        </div>
-        <div class="art-item">
-          <img src="images/wildwood_art2.jpeg" alt="Artwork 2 from Wildwood Market and Eatery">
-          <p class="caption">Piece Title 2</p>
-        </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item"><img src="images/ww1.jpeg" alt="Artwork 1 from Wildwood Market and Eatery"></div>
+        <div class="portfolio-item"><img src="images/ww2.jpeg" alt="Artwork 2 from Wildwood Market and Eatery"></div>
+        <div class="portfolio-item"><img src="images/ww3.jpeg" alt="Artwork 3 from Wildwood Market and Eatery"></div>
+        <div class="portfolio-item"><img src="images/ww4.jpeg" alt="Artwork 4 from Wildwood Market and Eatery"></div>
+        <div class="portfolio-item"><img src="images/ww5.jpeg" alt="Artwork 5 from Wildwood Market and Eatery"></div>
+        <div class="portfolio-item"><img src="images/ww6.jpeg" alt="Artwork 6 from Wildwood Market and Eatery"></div>
+        <div class="portfolio-item"><img src="images/ww7.jpeg" alt="Artwork 7 from Wildwood Market and Eatery"></div>
+        <div class="portfolio-item"><img src="images/ww8.jpeg" alt="Artwork 8 from Wildwood Market and Eatery"></div>
+        <div class="portfolio-item"><img src="images/ww9.jpeg" alt="Artwork 9 from Wildwood Market and Eatery"></div>
+        <div class="portfolio-item"><img src="images/ww10.jpeg" alt="Artwork 10 from Wildwood Market and Eatery"></div>
       </div>
     </section>
   </main>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <a class="prev">&#10094;</a>
+    <a class="next">&#10095;</a>
+  </div>
+
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.getElementsByClassName("close")[0];
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    const images = document.querySelectorAll(".portfolio-item img");
+
+    let currentIndex = 0;
+
+    images.forEach((img, index) => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+        currentIndex = index;
+      });
+    });
+
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    };
+
+    prevBtn.onclick = function() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      modalImg.src = images[currentIndex].src;
+    };
+
+    nextBtn.onclick = function() {
+      currentIndex = (currentIndex + 1) % images.length;
+      modalImg.src = images[currentIndex].src;
+    };
+
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
 </body>
 </html>
