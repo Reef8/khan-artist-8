@@ -24,19 +24,19 @@
     <div class="gallery-grid">
       <!-- Image -->
       <div class="media-block">
-        <img src="images/art2.jpg" alt="Copy and Paste artwork on canvas">
+        <img class="lightbox-trigger" src="images/art2.jpg" alt="Copy and Paste artwork on canvas">
         <p>Colorful imprints of a squash ball face their messy duplicates across the canvas.</p>
       </div>
 
       <!-- Video 1 -->
       <div class="media-block">
-        <video src="videos/copypastereveal.mp4" autoplay muted loop playsinline></video>
+        <video class="lightbox-trigger" src="videos/copypastereveal.mp4" autoplay muted loop playsinline></video>
         <p>Revealing my work, days before auctioning it off at the 2025 Yusuf Khan Invitational squash tournament.</p>
       </div>
 
       <!-- Video 2 -->
       <div class="media-block">
-        <video src="videos/upclosecopypaste.mp4" autoplay muted loop playsinline></video>
+        <video class="lightbox-trigger" src="videos/upclosecopypaste.mp4" autoplay muted loop playsinline></video>
         <p>Up close look at the vibrant colors and ball markings.</p>
       </div>
     </div>
@@ -44,66 +44,81 @@
     <p><a href="portfolio.html">← Back to Portfolio</a></p>
   </section>
 
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
+  <!-- Lightbox (same structure as art1.html) -->
+  <div class="lightbox" id="lightbox">
     <span class="lightbox-close">&times;</span>
     <span class="lightbox-prev">&#10094;</span>
-    <div class="lightbox-content"></div>
+    <div class="lightbox-content-container">
+      <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged artwork" style="display:none;">
+      <video class="lightbox-content" id="lightbox-video" controls autoplay muted style="display:none;"></video>
+    </div>
     <span class="lightbox-next">&#10095;</span>
   </div>
 
   <script>
-    const lightbox = document.getElementById("lightbox");
-    const lightboxContent = document.querySelector(".lightbox-content");
-    const closeBtn = document.querySelector(".lightbox-close");
-    const prevBtn = document.querySelector(".lightbox-prev");
-    const nextBtn = document.querySelector(".lightbox-next");
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideo = document.getElementById('lightbox-video');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    const triggers = document.querySelectorAll('.lightbox-trigger');
 
-    const items = Array.from(document.querySelectorAll(".media-block img, .media-block video"));
     let currentIndex = 0;
 
-    function showLightbox(index) {
-      currentIndex = index;
-      const item = items[index];
-      if (item.tagName === "VIDEO") {
-        lightboxContent.innerHTML = `<video src="${item.src}" controls autoplay></video>`;
+    const showLightbox = (index) => {
+      const item = triggers[index];
+      lightbox.style.display = 'flex';
+      if(item.tagName.toLowerCase() === 'video') {
+        lightboxImg.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = item.src;
+        lightboxVideo.muted = true;
+        lightboxVideo.autoplay = true;
+        lightboxVideo.play();
       } else {
-        lightboxContent.innerHTML = `<img src="${item.src}" alt="">`;
+        lightboxVideo.style.display = 'none';
+        lightboxImg.style.display = 'block';
+        lightboxImg.src = item.src;
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
       }
-      lightbox.style.display = "flex";
+      currentIndex = index;
     }
 
-    items.forEach((item, index) => {
-      item.addEventListener("click", () => showLightbox(index));
+    triggers.forEach((item, index) => {
+      item.addEventListener('click', () => showLightbox(index));
     });
 
-    closeBtn.addEventListener("click", () => {
-      lightbox.style.display = "none";
-      lightboxContent.innerHTML = "";
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxVideo.pause();
+      lightboxVideo.src = '';
     });
 
-    prevBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex - 1 + items.length) % items.length;
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + triggers.length) % triggers.length;
       showLightbox(currentIndex);
     });
 
-    nextBtn.addEventListener("click", () => {
-      currentIndex = (currentIndex + 1) % items.length;
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % triggers.length;
       showLightbox(currentIndex);
     });
 
-    lightbox.addEventListener("click", (e) => {
+    lightbox.addEventListener('click', e => {
       if (e.target === lightbox) {
-        lightbox.style.display = "none";
-        lightboxContent.innerHTML = "";
+        lightbox.style.display = 'none';
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
       }
     });
 
-    document.addEventListener("keydown", (e) => {
-      if (lightbox.style.display === "flex") {
-        if (e.key === "ArrowLeft") prevBtn.click();
-        if (e.key === "ArrowRight") nextBtn.click();
-        if (e.key === "Escape") closeBtn.click();
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+        if (e.key === 'Escape') closeBtn.click();
       }
     });
   </script>
