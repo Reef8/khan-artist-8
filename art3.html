@@ -46,7 +46,7 @@
   </section>
 
   <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
+  <div id="lightbox" class="lightbox" style="display:none;">
     <span class="lightbox-close">&times;</span>
     <span class="lightbox-prev">&#10094;</span>
     <div class="lightbox-content"></div>
@@ -67,9 +67,9 @@
       currentIndex = index;
       const item = items[index];
       if (item.tagName === "VIDEO") {
-        lightboxContent.innerHTML = `<video src="${item.src}" controls autoplay></video>`;
+        lightboxContent.innerHTML = `<video src="${item.src}" controls autoplay muted></video>`;
       } else {
-        lightboxContent.innerHTML = `<img src="${item.src}" alt="">`;
+        lightboxContent.innerHTML = `<img src="${item.src}" alt="" style="max-width:90vw; max-height:90vh;">`;
       }
       lightbox.style.display = "flex";
     }
