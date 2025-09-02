@@ -5,77 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khan Artist - Contact</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
   <header>
     <h1>Khan Artist</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="locations.html">Collections</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
+   <nav>
+  <a href="index.html" class="active">Home</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="locations.html">Collections</a>
+  <a href="contact.html">Contact</a>
+</nav>
   </header>
 
-  <main>
-    <section class="contact-info">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
-      <p>Instagram: <a href="https://www.instagram.com/yourusername" target="_blank">@yourusername</a></p>
-      <p>TikTok: <a href="https://www.tiktok.com/@yourusername" target="_blank">@yourusername</a></p>
-    </section>
-
-    <section class="contact-form">
-      <h2>Send Me a Message</h2>
-      <form id="contactForm" action="https://formspree.io/f/yourformid" method="POST">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name" required>
-
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="you@example.com" required>
-
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
-
-        <button type="submit">Send Message</button>
-      </form>
-      <p id="successMessage" style="display:none; color:green; margin-top:10px;">
-        Thank you! Your message has been sent.
-      </p>
-    </section>
-  </main>
-
-  <script>
-    const form = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault(); // Stop default submission
-
-      const formData = new FormData(form);
-      fetch(form.action, {
-        method: form.method,
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      .then(response => {
-        if (response.ok) {
-          successMessage.style.display = 'block';
-          form.reset();
-        } else {
-          alert('Oops! There was a problem submitting your form.');
-        }
-      })
-      .catch(error => {
-        alert('Oops! There was a problem submitting your form.');
-      });
-    });
-  </script>
+<section class="contact">
+  <h2>Contact Me</h2>
+  <div class="contact-links">
+    <p>
+      <a href="mailto:sharifk8@gmail.com" target="_blank">
+        <i class="fas fa-envelope"></i> sharifk8@gmail.com
+      </a>
+    </p>
+    <p>
+      <a href="https://www.instagram.com/_the_khan_artist/" target="_blank">
+        <i class="fab fa-instagram"></i> @_the_khan_artist
+      </a>
+    </p>
+    <p>
+      <a href="https://www.tiktok.com/@art_by_reef?_t=ZT-8zEp1Nop9hO&_r=1" target="_blank">
+        <i class="fab fa-tiktok"></i> @art_by_reef
+      </a>
+    </p>
+  </div>
+</section>
 </body>
 </html>
