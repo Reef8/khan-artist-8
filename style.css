@@ -1259,4 +1259,10 @@ section {
   font-family: 'Montserrat', sans-serif;
   color: #555;
 }
+.grid img {
+  width: 100%;        /* makes all images stretch to the same width as their grid cell */
+  height: auto;       /* keeps aspect ratio */
+  object-fit: cover;  /* trims/zooms images to fit nicely if needed */
+  display: block;     /* removes extra white space below images */
+}
 
