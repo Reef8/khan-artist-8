@@ -1265,4 +1265,43 @@ section {
   object-fit: cover;  /* trims/zooms images to fit nicely if needed */
   display: block;     /* removes extra white space below images */
 }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  align-items: start; /* keeps rows aligned neatly */
+}
+
+.grid a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  max-width: 320px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.grid img {
+  width: 100%;
+  height: 300px;   /* keeps all images the same height */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.art-title {
+  font-weight: bold;
+  margin: 8px 0 4px;
+}
+
+.caption {
+  font-style: italic;
+  font-size: 0.9rem;
+}
 
