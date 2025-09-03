@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Might Thor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Khan Artist</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="locations.html">Collections</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="artwork">
+    <h2>Mighty Thor</h2>
+
+    <div class="gallery-grid">
+      <!-- First Image -->
+      <div class="media-block">
+        <img class="lightbox-trigger" src="images/thor2.jpeg" alt="Main view of artwork">
+        <p>Moments after adding the last layer of paint and joint compound.</p>
+      </div>
+
+      <!-- Video Reveal -->
+      <div class="media-block">
+        <video class="lightbox-trigger" src="videos/imreveal.MP4" autoplay muted loop playsinline></video>
+        <p>Revealing the painting, along with the other Marvel superhero inspired pieces.</p>
+      </div>
+
+      <!-- Second Image -->
+      <div class="media-block">
+        <img class="lightbox-trigger" src="images/thor3.jpeg" alt="Detail view of artwork">
+        <p>Up close look at the details of the painting.</p>
+      </div>
+    </div>
+
+    <p><a href="portfolio.html">← Back to Portfolio</a></p>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <span class="lightbox-prev">&#10094;</span>
+    <div class="lightbox-content-container">
+      <img class="lightbox-content" id="lightbox-img" src="" alt="Enlarged artwork" style="display:none;">
+      <video class="lightbox-content" id="lightbox-video" controls autoplay muted style="display:none;"></video>
+    </div>
+    <span class="lightbox-next">&#10095;</span>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxVideo = document.getElementById('lightbox-video');
+    const closeBtn = document.querySelector('.lightbox-close');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    const triggers = document.querySelectorAll('.lightbox-trigger');
+
+    let currentIndex = 0;
+
+    const showLightbox = (index) => {
+      const item = triggers[index];
+      lightbox.style.display = 'flex';
+      if (item.tagName.toLowerCase() === 'video') {
+        lightboxImg.style.display = 'none';
+        lightboxVideo.style.display = 'block';
+        lightboxVideo.src = item.src;
+        lightboxVideo.muted = true;
+        lightboxVideo.autoplay = true;
+        lightboxVideo.play();
+      } else {
+        lightboxVideo.style.display = 'none';
+        lightboxImg.style.display = 'block';
+        lightboxImg.src = item.src;
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
+      }
+      currentIndex = index;
+    }
+
+    triggers.forEach((item, index) => {
+      item.addEventListener('click', () => showLightbox(index));
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxVideo.pause();
+      lightboxVideo.src = '';
+    });
+
+    prevBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex - 1 + triggers.length) % triggers.length;
+      showLightbox(currentIndex);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % triggers.length;
+      showLightbox(currentIndex);
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (lightbox.style.display === 'flex') {
+        if (e.key === 'ArrowLeft') prevBtn.click();
+        if (e.key === 'ArrowRight') nextBtn.click();
+        if (e.key === 'Escape') closeBtn.click();
+      }
+    });
+  </script>
+</body>
+</html>
